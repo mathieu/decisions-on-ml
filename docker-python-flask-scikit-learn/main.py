@@ -16,8 +16,8 @@ app = Flask(__name__)
 def index():
     return "Alive!"
 
-@app.route('/prediction/api/v1.0/loanDefault', methods=['GET'])
-def get_prediction():
+@app.route('/prediction/api/v1.0/loandefault', methods=['GET'])
+def get_loandefault():
     creditScore = float(request.args.get('creditScore'))
     income = float(request.args.get('income'))
     loanAmount = float(request.args.get('loanAmount'))
@@ -29,15 +29,20 @@ def get_prediction():
     prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
     return str(prediction)
 
-@app.route('/test', methods=['GET'])
-def get_test():
-    feature1 = float(request.args.get('f1'))
-    feature2 = float(request.args.get('f2'))
-    feature3 = float(request.args.get('f3'))
+@app.route('/automation/api/v1.0/prediction', methods=['GET'])
+def get_prediction():
+    model = request.args.get('model')
+    version = request.args.get('version')
+    creditScore = float(request.args.get('creditScore'))
+    income = float(request.args.get('income'))
+    loanAmount = float(request.args.get('loanAmount'))
+    monthDuration = float(request.args.get('monthDuration'))
+    rate = float(request.args.get('rate'))
+    yearlyReimbursement = float(request.args.get('yearlyReimbursement'))
 
     loaded_model = pickle.load(open('pickle/miniloandefault-svm.pkl', 'rb'))
-
-    return str("Ok")
+    prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
+    return str(prediction)
 
 if __name__ == '__main__':
     if os.environ['ENVIRONMENT'] == 'production':
