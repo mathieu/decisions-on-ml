@@ -30,7 +30,7 @@ http://127.0.0.1:3000/isAlive
 
 Send a http request and expect a loan repayment default prediction 
 ```console
-http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=580&income=66037&loanAmount=168781&monthDuration=120&rate=,0.09&yearlyReimbursement=16187
 ```
 
 Send a http request and expect no loan repayment default prediction in this case
