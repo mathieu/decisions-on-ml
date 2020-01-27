@@ -37,3 +37,8 @@ Send a http request and expect no loan repayment default prediction in this case
 ```console
 curl  http://127.0.0.1:3000/prediction/api/v1.0/loanDefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
 ```
+
+Send a http request on the dynamic API and expect a loan repayment default prediction 
+```console
+curl http://127.0.0.1:3000/prediction/api/v1.0?model=loan-default-svm&version1.0&creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+```
