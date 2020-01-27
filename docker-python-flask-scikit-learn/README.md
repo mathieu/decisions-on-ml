@@ -12,4 +12,4 @@ interactive (recommended for debug): docker run -p 3000:5000 -it {some tag name}
 
 ## Use a simple ML endpoint  
 http://127.0.0.1:3000/isAlive  
-http://127.0.0.1:3000/prediction/api/v1.0/loan-default?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+http://127.0.0.1:3000/prediction/api/v1.0/loanDefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
