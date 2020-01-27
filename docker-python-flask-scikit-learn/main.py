@@ -16,7 +16,7 @@ app = Flask(__name__)
 def index():
     return "Alive!"
 
-@app.route('/prediction/api/v1.0/some_prediction', methods=['GET'])
+@app.route('/prediction/api/v1.0/loan-default', methods=['GET'])
 def get_prediction():
     creditScore = float(request.args.get('creditScore'))
     income = float(request.args.get('income'))
