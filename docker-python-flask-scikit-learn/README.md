@@ -13,6 +13,7 @@ docker build . -t miniloanpredictionservice  -f ./Dockerfile
 ## Run
 ```console
 docker run -p 3000:5000 -d miniloanpredictionservice 
+```
 
 ## Check
 ```console
