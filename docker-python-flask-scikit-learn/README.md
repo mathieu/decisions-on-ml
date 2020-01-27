@@ -22,11 +22,18 @@ docker ps miniloanpredictionservice
 You should see a running container for miniloanpredictionservice image.
 
 ## Test the prediction endpoint
-Make sure that the service is up and responding.
-http://127.0.0.1:3000/isAlive  
 
-Send a http request and expect a loan repayment default prediction 
-http://127.0.0.1:3000/prediction/api/v1.0/loanDefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+### Make sure that the service is up and responding.
+```console
+curl http://127.0.0.1:3000/isAlive  
+```
 
-Send a http request and expect no loan repayment default prediction in this case
-http://127.0.0.1:3000/prediction/api/v1.0/loanDefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+### Send a http request and expect a loan repayment default prediction 
+```console
+curl http://127.0.0.1:3000/prediction/api/v1.0/loanDefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+```
+
+### Send a http request and expect no loan repayment default prediction in this case
+```console
+curl  http://127.0.0.1:3000/prediction/api/v1.0/loanDefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+```
