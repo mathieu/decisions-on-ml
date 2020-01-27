@@ -5,9 +5,9 @@ On init, a simple SVM model is created and saved on machine. On request arrival 
 
 
 ## Run on docker - local 
-docker build . -t {some tag name}  -f ./Dockerfile_local  
-detached : docker run -p 3000:5000 -d {some tag name}  
-interactive (recommended for debug): docker run -p 3000:5000 -it {some tag name}  
+docker build . -t miniloanpredictionservice  -f ./Dockerfile
+detached : docker run -p 3000:5000 -d miniloanpredictionservice 
+interactive (recommended for debug): docker run -p 3000:5000 -it miniloanpredictionservice
 
 
 ## Use a simple ML endpoint  
