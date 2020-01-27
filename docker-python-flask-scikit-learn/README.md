@@ -1,6 +1,6 @@
-# python-flask-docker-sklearn
-A simple example of python microservice for real time machine learning.
+# Miniloan prediction micro service
 
+A simple example of ML running microservice for real time machine learning based on Python, Flask, scikit-learn and Docker.
 On init, a simple SVM model is created and saved on machine. On request arrival for prediction, the SVM model is loaded and returning prediction.    
 
 
