@@ -13,7 +13,13 @@ docker build . -t miniloanpredictionservice  -f ./Dockerfile
 ## Run
 ```console
 docker run -p 3000:5000 -d miniloanpredictionservice 
+
+## Check
+```console
+docker ps miniloanpredictionservice 
 ```
+You should see a running container for miniloanpredictionservice image.
+
 ## Test the prediction endpoint
 Make sure that the service is up and responding.
 http://127.0.0.1:3000/isAlive  
