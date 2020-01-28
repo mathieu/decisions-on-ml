@@ -6,8 +6,7 @@
 
 import os
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_classification
+from sklearn.linear_model import LogisticRegression
 import pickle
 
 data = pd.read_csv('data/miniloan-decisions-default-1K.csv', sep=',',header=0)
@@ -26,9 +25,7 @@ y=data['paymentDefault']  # Label
 # deterministic split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0) # 70% training and 30% test
 
-model = RandomForestClassifier(max_depth=2, random_state=0).fit(X_train, y_train)
-print(model.feature_importances_)
-
+model = LogisticRegression(random_state=0).fit(X_train, y_train)
 
 # Model Accuracy, how often is the classifier correct?
 y_pred=model.predict(X_test)
@@ -37,21 +34,25 @@ print("Accuracy:",accuracy)
 
 #Unit test
 prediction = model.predict_proba([[397,160982,570189,240,0.07,57195]]) # expected 1 meaning default
-print("prediction with Random Forest Classifier: " + str(prediction) + " expect [1]")
+print("prediction with LR: " + str(prediction) + " expect [1]")
 
 prediction = model.predict_proba([[580,66037,168781,120,0.09,16187]]) # expected 0
-print("prediction with Random Forest Classifier: " + str(prediction) + " expect [0]")
+print("prediction with LR: " + str(prediction) + " expect [0]")
 
 
-#Test cut values for samples
+
+
+
 prediction = model.predict_proba([[400,17500,27500,12,0.05,40000]]) # expected 0
-print("prediction test 1 with Random Forest Classifier: " + str(prediction) + " expect [0]")
+print("prediction test 1 with LR: " + str(prediction) + " expect [0]")
 
-prediction = model.predict_proba([[600,80000,400000,120,0.05,75195]]) # expected 0
-print("prediction test 2 with Random Forest Classifier: " + str(prediction) + " expect [0]")
+prediction = model.predict_proba([[400,17500,27800,12,0.05,40000]]) # expected 0
+print("prediction test 2 with LR: " + str(prediction) + " expect [0]")
 
-prediction = model.predict_proba([[500,60000,1000000,120,0.05,75195]]) # expected 0
-print("prediction test 3 with Random Forest Classifier: " + str(prediction) + " expect [1]")
+prediction = model.predict_proba([[400,17500,100000,12,0.05,57195]]) # expected 0
+print("prediction test 3 with LR: " + str(prediction) + " expect [0]")
+
+
 
 
 
@@ -63,10 +64,9 @@ rate = 0.07
 yearlyReimbursement = 57195
 
 prediction = model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
-print("prediction with Random Forest Classifier: " + str(prediction) + " expect [0]")
+print("prediction with LR: " + str(prediction) + " expect [1]")
 
 #Model serialization
-
 toBePersisted = dict({
     'model': model,
     'metadata': {
@@ -80,12 +80,11 @@ toBePersisted = dict({
 })
 
 from joblib import dump
-dump(toBePersisted, 'models/miniloandefault-rfc.joblib')
+dump(toBePersisted, 'models/miniloandefault-lr.joblib')
 
 #Testing deserialized model
 
 from joblib import load
-dictionary = load('models/miniloandefault-rfc.joblib')
+dictionary = load('models/miniloandefault-lr.joblib')
 loaded_model = dictionary['model']
 prediction = loaded_model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
-print("prediction with serialized Random Forest Classifier: " + str(prediction) + " expect [1]")
