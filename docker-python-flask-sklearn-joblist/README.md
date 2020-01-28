@@ -34,7 +34,7 @@ http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=500&income=600
 ```
 You should see the following answer:
 ```console
-
+[[ 0.46936965 0.53063035]]
 ```
 The predictive service returns the probability for each class, no default and default classes.
 With a cut threshold set to 0.5 we expect no payment default in this case.
