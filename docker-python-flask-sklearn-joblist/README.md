@@ -33,7 +33,9 @@ Send a http request and expect a loan repayment default prediction
 http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
 ```
 You should see the following answer:
+```console
 [[ 0.67176633 0.32823367]]
+```
 The predicitive service returns the probability for each class, no default and default classes.
 With a cut threashold set to 0.5 we expect no payment default in this case.
 
@@ -42,7 +44,9 @@ Send a http request and expect no loan repayment default prediction in this case
 http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=580&income=66037&loanAmount=168781&monthDuration=120&rate=0.09&yearlyReimbursement=16187
 ```
 You should see the following answer:
+```console
 [[ 0.86797186 0.13202814]]
+```
 The predicitive service returns the probability for each class, no default and default classes.
 With a cut threashold set to 0.5 we expect a payment default in this case.
 
