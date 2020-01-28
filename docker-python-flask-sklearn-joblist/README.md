@@ -30,11 +30,11 @@ http://127.0.0.1:3000/isAlive
 
 Send a http request and expect a loan repayment default prediction 
 ```console
-http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=500&income=60000&loanAmount=1000000&monthDuration=120&rate=0.05&yearlyReimbursement=75195
 ```
 You should see the following answer:
 ```console
-[[ 0.67176633 0.32823367]]
+
 ```
 The predictive service returns the probability for each class, no default and default classes.
 With a cut threshold set to 0.5 we expect no payment default in this case.
