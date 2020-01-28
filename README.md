@@ -4,5 +4,7 @@
 
 This repository includes sample material to show how IBM Decision Services can leverage ML predictive models.
 
-- [docker-python-flask-scikit-learn](docker-python-flask-scikit-learn/README.md): Shows how to serve a simple Support Vector Machine ML model to predict a default for a loan repayment.
+- [docker-python-flask-sklearn-pickle](docker-python-flask-sklearn-pickle/README.md): Shows how to serve a simple Support Vector Machine ML model to predict a default for a loan repayment through a pickle serialization
+
+- [docker-python-flask-sklearn-joblist](docker-python-flask-sklearn-joblist/README.md): Shows how to serve a simple Support Vector Machine ML model to predict a default for a loan repayment through a joblist serialization
 
