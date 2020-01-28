@@ -4,7 +4,7 @@ from flask import Flask
 from flask import request
 import pandas as pd
 from sklearn import svm
-import pickle
+from joblib import load
 
 #
 #Flask
@@ -25,8 +25,9 @@ def get_loandefault():
     rate = float(request.args.get('rate'))
     yearlyReimbursement = float(request.args.get('yearlyReimbursement'))
 
-    loaded_model = pickle.load(open('models/miniloandefault-svm.pkl', 'rb'))
-    prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
+    dictionary = load('models/miniloandefault-rfc.joblib')
+    loaded_model = dictionary['model']
+    prediction = loaded_model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
     return str(prediction)
 
 @app.route('/automation/api/v1.0/prediction', methods=['GET'])
@@ -40,8 +41,9 @@ def get_prediction():
     rate = float(request.args.get('rate'))
     yearlyReimbursement = float(request.args.get('yearlyReimbursement'))
 
-    loaded_model = pickle.load(open('models/miniloandefault-svc.pkl', 'rb'))
-    prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
+    dictionary = load('models/miniloandefault-rfc.joblib')
+    loaded_model = dictionary['model']
+    prediction = loaded_model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
     return str(prediction)
 
 if __name__ == '__main__':
