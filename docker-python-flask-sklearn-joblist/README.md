@@ -37,7 +37,7 @@ You should see the following answer:
 [[ 0.67176633 0.32823367]]
 ```
 The predictive service returns the probability for each class, no default and default classes.
-With a cut threashold set to 0.5 we expect no payment default in this case.
+With a cut threshold set to 0.5 we expect no payment default in this case.
 
 Send a http request and expect no loan repayment default prediction in this case
 ```console
@@ -47,7 +47,7 @@ You should see the following answer:
 ```console
 [[ 0.86797186 0.13202814]]
 ```
-With a cut threashold set to 0.5 we expect a payment default in this case.
+With a cut threshold set to 0.5 we expect a payment default in this case.
 
 Send a http request on the dynamic API and expect a loan repayment default prediction 
 ```console
