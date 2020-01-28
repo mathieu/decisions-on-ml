@@ -1,7 +1,7 @@
 #
 # This program builds a SVM model to predict a loan payment default.
 # It reads a labelled dataset of loan payments, makes the model, measures its accuracy and performs unit tests.
-# It ends by a serialization through pickle. The serialized model is then used by the main program that serves it.
+# It ends by a serialization through models. The serialized model is then used by the main program that serves it.
 #
 
 import os
@@ -32,7 +32,8 @@ print(model.feature_importances_)
 
 # Model Accuracy, how often is the classifier correct?
 y_pred=model.predict(X_test)
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+accuracy = metrics.accuracy_score(y_test, y_pred)
+print("Accuracy:",accuracy)
 
 #Unit test
 prediction = model.predict_proba([[397,160982,570189,240,0.07,57195]]) # expected 1 meaning default
@@ -65,9 +66,26 @@ prediction = model.predict_proba([[creditScore, income, loanAmount, monthDuratio
 print("prediction with Random Forest Classifier: " + str(prediction) + " expect [1]")
 
 #Model serialization
-pickle.dump(model, open('pickle/miniloandefault-rfc.pkl', 'wb'))
+
+toBePersisted = dict({
+    'model': model,
+    'metadata': {
+        'name': 'loan payment default classification',
+        'author': 'Pierre Feillet',
+        'date': '2020-01-28T15:45:00CEST',
+        'metrics': {
+            'accuracy': accuracy
+        }
+    }
+})
+
+from joblib import dump
+dump(toBePersisted, 'models/miniloandefault-rfc.joblib')
 
 #Testing deserialized model
-loaded_model = pickle.load(open('pickle/miniloandefault-rfc.pkl', 'rb'))
+
+from joblib import load
+dictionary = load('models/miniloandefault-rfc.joblib')
+loaded_model = dictionary['model']
 prediction = loaded_model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
 print("prediction with serialized Random Forest Classifier: " + str(prediction) + " expect [1]")

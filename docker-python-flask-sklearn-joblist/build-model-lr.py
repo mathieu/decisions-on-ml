@@ -1,7 +1,7 @@
 #
 # This program builds a SVM model to predict a loan payment default.
 # It reads a labelled dataset of loan payments, makes the model, measures its accuracy and performs unit tests.
-# It ends by a serialization through pickle. The serialized model is then used by the main program that serves it.
+# It ends by a serialization through models. The serialized model is then used by the main program that serves it.
 #
 
 import os
@@ -25,30 +25,31 @@ y=data['paymentDefault']  # Label
 # deterministic split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0) # 70% training and 30% test
 
-LR = LogisticRegression(random_state=0).fit(X_train, y_train)
+model = LogisticRegression(random_state=0).fit(X_train, y_train)
 
 # Model Accuracy, how often is the classifier correct?
-y_pred=LR.predict(X_test)
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+y_pred=model.predict(X_test)
+accuracy = metrics.accuracy_score(y_test, y_pred)
+print("Accuracy:",accuracy)
 
 #Unit test
-prediction = LR.predict_proba([[397,160982,570189,240,0.07,57195]]) # expected 1 meaning default
+prediction = model.predict_proba([[397,160982,570189,240,0.07,57195]]) # expected 1 meaning default
 print("prediction with LR: " + str(prediction) + " expect [1]")
 
-prediction = LR.predict_proba([[580,66037,168781,120,0.09,16187]]) # expected 0
+prediction = model.predict_proba([[580,66037,168781,120,0.09,16187]]) # expected 0
 print("prediction with LR: " + str(prediction) + " expect [0]")
 
 
 
 
 
-prediction = LR.predict_proba([[400,17500,27500,12,0.05,40000]]) # expected 0
+prediction = model.predict_proba([[400,17500,27500,12,0.05,40000]]) # expected 0
 print("prediction test 1 with LR: " + str(prediction) + " expect [0]")
 
-prediction = LR.predict_proba([[400,17500,27800,12,0.05,40000]]) # expected 0
+prediction = model.predict_proba([[400,17500,27800,12,0.05,40000]]) # expected 0
 print("prediction test 2 with LR: " + str(prediction) + " expect [0]")
 
-prediction = LR.predict_proba([[400,17500,100000,12,0.05,57195]]) # expected 0
+prediction = model.predict_proba([[400,17500,100000,12,0.05,57195]]) # expected 0
 print("prediction test 3 with LR: " + str(prediction) + " expect [0]")
 
 
@@ -62,13 +63,28 @@ monthDuration = 240
 rate = 0.07
 yearlyReimbursement = 57195
 
-prediction = LR.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
+prediction = model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
 print("prediction with LR: " + str(prediction) + " expect [1]")
 
 #Model serialization
-pickle.dump(LR, open('pickle/miniloandefault-lr.pkl', 'wb'))
+toBePersisted = dict({
+    'model': model,
+    'metadata': {
+        'name': 'loan payment default classification',
+        'author': 'Pierre Feillet',
+        'date': '2020-01-28T15:45:00CEST',
+        'metrics': {
+            'accuracy': accuracy
+        }
+    }
+})
+
+from joblib import dump
+dump(toBePersisted, 'models/miniloandefault-lr.joblib')
 
 #Testing deserialized model
-loaded_model = pickle.load(open('pickle/miniloandefault-lr.pkl', 'rb'))
+
+from joblib import load
+dictionary = load('models/miniloandefault-lr.joblib')
+loaded_model = dictionary['model']
 prediction = loaded_model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
-print("prediction with serialized LR: " + str(prediction) + " expect [1]")

@@ -25,7 +25,7 @@ def get_loandefault():
     rate = float(request.args.get('rate'))
     yearlyReimbursement = float(request.args.get('yearlyReimbursement'))
 
-    loaded_model = pickle.load(open('pickle/miniloandefault-svm.pkl', 'rb'))
+    loaded_model = pickle.load(open('models/miniloandefault-svm.pkl', 'rb'))
     prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
     return str(prediction)
 
@@ -40,7 +40,7 @@ def get_prediction():
     rate = float(request.args.get('rate'))
     yearlyReimbursement = float(request.args.get('yearlyReimbursement'))
 
-    loaded_model = pickle.load(open('pickle/miniloandefault-svm.pkl', 'rb'))
+    loaded_model = pickle.load(open('models/miniloandefault-svc.pkl', 'rb'))
     prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
     return str(prediction)
 

@@ -43,10 +43,10 @@ prediction = SVM.predict([[creditScore, income, loanAmount, monthDuration, rate,
 print("prediction with SVM: " + str(prediction) + " expect [1]")
 
 #Model serialization
-pickle.dump(SVM, open('pickle/miniloandefault-svm.pkl', 'wb'))
+pickle.dump(SVM, open('models/miniloandefault-svm.pkl', 'wb'))
 
 #Testing deserialized model
-loaded_model = pickle.load(open('pickle/miniloandefault-svm.pkl', 'rb'))
+loaded_model = pickle.load(open('models/miniloandefault-svm.pkl', 'rb'))
 prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
 print("prediction with serialized SVM: " + str(prediction) + " expect [1]")
 
@@ -69,7 +69,7 @@ def get_prediction():
     rate = float(request.args.get('rate'))
     yearlyReimbursement = float(request.args.get('yearlyReimbursement'))
 
-    loaded_model = pickle.load(open('pickle/miniloandefault-svm.pkl', 'rb'))
+    loaded_model = pickle.load(open('models/miniloandefault-svm.pkl', 'rb'))
     prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
     return str(prediction)
 

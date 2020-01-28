@@ -1,7 +1,7 @@
 #
 # This program builds a SVM model to predict a loan payment default.
 # It reads a labelled dataset of loan payments, makes the model, measures its accuracy and performs unit tests.
-# It ends by a serialization through pickle. The serialized model is then used by the main program that serves it.
+# It ends by a serialization through models. The serialized model is then used by the main program that serves it.
 #
 
 import os
@@ -23,22 +23,23 @@ y=data['paymentDefault']  # Label
 # Split dataset into training set and test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3) # 70% training and 30% test
 
-SVM = svm.LinearSVC()
-SVM.fit(X_train, y_train)
+model = svm.LinearSVC()
+model.fit(X_train, y_train)
 
 # Model Accuracy, how often is the classifier correct?
-y_pred=SVM.predict(X_test)
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+y_pred=model.predict(X_test)
+accuracy = metrics.accuracy_score(y_test, y_pred)
+print("Accuracy:",accuracy)
 
 #Unit test
-prediction = SVM.predict([[397,160982,570189,240,0.07,57195]]) # expected 1 meaning default
+prediction = model.predict([[397,160982,570189,240,0.07,57195]]) # expected 1 meaning default
 print("prediction with SVM: " + str(prediction) + " expect [1]")
-decision_function = SVM.decision_function([[397,160982,570189,240,0.07,57195]]) # expected 1
+decision_function = model.decision_function([[397,160982,570189,240,0.07,57195]]) # expected 1
 print("Confidence levels:", decision_function)
 
-prediction = SVM.predict([[580,66037,168781,120,0.09,16187]]) # expected 0
+prediction = model.predict([[580,66037,168781,120,0.09,16187]]) # expected 0
 print("prediction with SVM: " + str(prediction) + " expect [0]")
-decision_function = SVM.decision_function([[580,66037,168781,120,0.09,16187]]) # expected 0 meaning absence of default
+decision_function = model.decision_function([[580,66037,168781,120,0.09,16187]]) # expected 0 meaning absence of default
 print("Confidence levels:", decision_function)
 
 creditScore = 397
@@ -47,13 +48,29 @@ loanAmount = 570189
 monthDuration = 240
 rate = 0.07
 yearlyReimbursement = 57195
-prediction = SVM.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
+prediction = model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
 print("prediction with SVM: " + str(prediction) + " expect [1]")
 
 #Model serialization
-pickle.dump(SVM, open('pickle/miniloandefault-svm.pkl', 'wb'))
+toBePersisted = dict({
+    'model': model,
+    'metadata': {
+        'name': 'loan payment default classification',
+        'author': 'Pierre Feillet',
+        'date': '2020-01-28T15:45:00CEST',
+        'metrics': {
+            'accuracy': accuracy
+        }
+    }
+})
+
+from joblib import dump
+dump(toBePersisted, 'models/miniloandefault-svc.joblib')
 
 #Testing deserialized model
-loaded_model = pickle.load(open('pickle/miniloandefault-svm.pkl', 'rb'))
+
+from joblib import load
+dictionary = load('models/miniloandefault-svc.joblib')
+loaded_model = dictionary['model']
 prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
-print("prediction with serialized SVM: " + str(prediction) + " expect [1]")
+print("prediction with serialized Support Vector Machine: " + str(prediction) + " expect [1]")
