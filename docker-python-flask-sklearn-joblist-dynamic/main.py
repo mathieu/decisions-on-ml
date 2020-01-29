@@ -1,11 +1,12 @@
 #!flask/bin/python
 import os
-from flask import Flask
-from flask import request
+from flask import Flask, jsonify
+from flask import request, jsonify
 import pandas as pd
-from sklearn import svm
 from joblib import load
 
+import json
+import requests
 #
 #Flask
 #
@@ -14,40 +15,53 @@ app = Flask(__name__)
 
 @app.route('/isAlive')
 def index():
-    return "Alive!"
+    return "Ok"
 
-@app.route('/prediction/api/v1.0/loandefault', methods=['GET'])
-def get_loandefault():
-    creditScore = float(request.args.get('creditScore'))
-    income = float(request.args.get('income'))
-    loanAmount = float(request.args.get('loanAmount'))
-    monthDuration = float(request.args.get('monthDuration'))
-    rate = float(request.args.get('rate'))
-    yearlyReimbursement = float(request.args.get('yearlyReimbursement'))
+@app.route('/automation/api/v1.0/prediction', methods=['POST'])
+def get_pred():
+    try:
+        jsonDictionary = request.json
+        print(jsonDictionary)
+        jsonPayloadDictionary = jsonDictionary["request"]
 
-    dictionary = load('models/miniloandefault-rfc.joblib')
-    loaded_model = dictionary['model']
-    prediction = loaded_model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
-    return str(prediction)
+        creditScore = float(jsonPayloadDictionary["creditScore"])
+        income = float(jsonPayloadDictionary["income"])
+        loanAmount = float(jsonPayloadDictionary["loanAmount"])
+        monthDuration = float(jsonPayloadDictionary["monthDuration"])
+        rate = float(jsonPayloadDictionary["rate"])
+        yearlyReimbursement = float(jsonPayloadDictionary["yearlyReimbursement"])
 
-@app.route('/automation/api/v1.0/prediction', methods=['GET'])
-def get_prediction():
-    model = request.args.get('model')
-    version = request.args.get('version')
-    creditScore = float(request.args.get('creditScore'))
-    income = float(request.args.get('income'))
-    loanAmount = float(request.args.get('loanAmount'))
-    monthDuration = float(request.args.get('monthDuration'))
-    rate = float(request.args.get('rate'))
-    yearlyReimbursement = float(request.args.get('yearlyReimbursement'))
+        dictionary = load('models/miniloandefault-rfc.joblib')
+        loaded_model = dictionary['model']
+        predictionWrapper = loaded_model.predict_proba(
+            [[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
 
-    dictionary = load('models/miniloandefault-rfc.joblib')
-    loaded_model = dictionary['model']
-    prediction = loaded_model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
-    return str(prediction)
+        prediction = predictionWrapper[0]
+
+        probabilities = {
+            "0": prediction[0],
+            "1": prediction[1]
+        }
+        responseDictionary = {
+            "id": "123",
+            "probabilities": probabilities
+        }
+
+        json_string = json.dumps(responseDictionary, indent=4)
+
+        print(json_string)
+
+        return json_string
+
+        #return jsonify({'prediction': prediction})
+
+    except:
+        return "KO"
+        #return jsonify({'trace': traceback.format_exc()})
+
 
 if __name__ == '__main__':
-    if os.environ['ENVIRONMENT'] == 'production':
-        app.run(port=80,host='0.0.0.0')
-    if os.environ['ENVIRONMENT'] == 'local':
-        app.run(port=5000,host='0.0.0.0')
+    #if os.environ['ENVIRONMENT'] == 'production':
+    #    app.run(port=80,host='0.0.0.0')
+    #if os.environ['ENVIRONMENT'] == 'local':
+    app.run(port=5000,host='0.0.0.0')

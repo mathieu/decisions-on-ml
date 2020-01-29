@@ -32,13 +32,26 @@ Send a http request and expect a loan repayment default prediction
 ```console
 http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
 ```
-
-Send a http request and expect no loan repayment default prediction in this case
+For the following JSON request
 ```console
-http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=580&income=66037&loanAmount=168781&monthDuration=120&rate=0.09&yearlyReimbursement=16187
+{
+    "request": {
+        "creditScore": "300",
+        "income": "100000",
+        "loanAmount": "570189",
+        "monthDuration": "240",
+        "rate": "0.07",
+        "yearlyReimbursement": "57195"
+    }
+}
 ```
-
-Send a http request on the dynamic API and expect a loan repayment default prediction 
+You should receive an answer like
 ```console
-http://127.0.0.1:3000/automation/api/v1.0/prediction?model=loan-default-svm&version=1.0&creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195 
+{
+"id": "123",
+"probabilities": {
+"0": 0.6717663255260751,
+"1": 0.32823367447392493
+}
+}
 ```
