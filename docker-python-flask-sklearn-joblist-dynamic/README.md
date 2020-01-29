@@ -1,4 +1,4 @@
-# Miniloan prediction micro service
+# A REST/JSON predictive micro service
 
 A simple example of ML running microservice for real time machine learning based on Python, Flask, scikit-learn and Docker.
 On request arrival for prediction, a Random Forest Classification model is loaded and run to predict a loan payment default.
