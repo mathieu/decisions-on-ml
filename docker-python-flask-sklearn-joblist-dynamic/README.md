@@ -32,7 +32,17 @@ Send a http request and expect a loan repayment default prediction
 ```console
 http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
 ```
-For the following JSON request
+Running locally the Docker container
+```console
+curl -d '{"request":{"creditScore":"300","income":"100000","loanAmount":"570189","monthDuration":"240","rate":"0.07","yearlyReimbursement":"57195"}}' -H 'Content-Type: application/json' http://0.0.0.0:5000/automation/api/v1.0/prediction
+ ```
+ 
+Running main.py on 0.0.0.0:5000
+```console
+curl -d '{"request":{"creditScore":"300","income":"100000","loanAmount":"570189","monthDuration":"240","rate":"0.07","yearlyReimbursement":"57195"}}' -H 'Content-Type: application/json' http://0.0.0.0:5000/automation/api/v1.0/prediction
+ ```
+ 
+With the following JSON request
 ```console
 {
     "request": {
@@ -48,10 +58,10 @@ For the following JSON request
 You should receive an answer like
 ```console
 {
-"id": "123",
-"probabilities": {
-"0": 0.6717663255260751,
-"1": 0.32823367447392493
-}
+    "id": "123",
+    "probabilities": {
+        "0": 0.6717663255260751,
+        "1": 0.32823367447392493
+    }
 }
 ```
