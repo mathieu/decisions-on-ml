@@ -1,16 +1,17 @@
-# Miniloan prediction micro service
+# A generic purpose ML micro service
 
-A simple example of ML running microservice for real time machine learning based on Python, Flask, scikit-learn and Docker.
+Moving forward a generic microservice to host any scikit-learn model. Technology stack is composed of Docker, Python, Flask, scikit-learn, pickle and Joblib.
 On request arrival for prediction, a Random Forest Classification model is loaded and run to predict a loan payment default.
 Input parameters describing the loan are passed in JSON as the prediction returned by the service.
+Same styoe of invocation for the classic Iris predictor.
 
 ## Build the ML microservice
 ```console
-docker build . -t miniloanpredictionservice  -f ./Dockerfile
+docker build . -t ml-microservice  -f ./Dockerfile
 ```
 ## Run the ML microservice
 ```console
-docker run -p 3000:5000 -d miniloanpredictionservice 
+docker run -p 3000:5000 -d ml-microservice 
 ```
 Your predictive service is ready to predict on the 127.0.0.1:3000 port.
 Note that you can run the server without Docker by starting main.py on your local environment. In this case adress will be 0.0.0.0:5000.
@@ -28,10 +29,6 @@ Make sure that the service is up and responding.
 http://127.0.0.1:3000/isAlive  
 ```
 
-Send a http request and expect a loan repayment default prediction 
-```console
-http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
-```
 Running locally the Docker container
 ```console
 curl -d '{"request":{"creditScore":"300","income":"100000","loanAmount":"570189","monthDuration":"240","rate":"0.07","yearlyReimbursement":"57195"}}' -H 'Content-Type: application/json' http://0.0.0.0:3000/automation/api/v1.0/prediction
