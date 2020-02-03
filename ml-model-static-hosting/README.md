@@ -2,7 +2,7 @@
 
 A simple example of ML running microservice for real time machine learning based on Python, Flask, scikit-learn and Docker.
 On request arrival for prediction, a Random Forest Classification model is loaded and run to predict a loan payment default.
-Input parameters describing the loan are passed in JSON as the prediction returned by the service.
+Input parameters describing the loan are passed as HTTP parameters. Prediction is returned by the service.
 
 ## Build the ML microservice
 ```console
@@ -41,24 +41,7 @@ Running main.py on 0.0.0.0:5000
 ```console
 curl -d '{"request":{"creditScore":"300","income":"100000","loanAmount":"570189","monthDuration":"240","rate":"0.07","yearlyReimbursement":"57195"}}' -H 'Content-Type: application/json' http://0.0.0.0:5000/automation/api/v1.0/prediction
  ```
- 
-With the following JSON request
-```console
-{
-    "model":" {
-        "name": toto",
-        "version":"1.0",
-        "format": "joblib"
-        }
-    "features": {
-        "creditScore": "300",
-        "income": "100000",
-        "loanAmount": "570189",
-        "monthDuration": "240",
-        "rate": "0.07",
-        "yearlyReimbursement": "57195"
-    }
-}
+
 ```
 You should receive an answer like
 ```console
