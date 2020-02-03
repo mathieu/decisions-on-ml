@@ -1,7 +1,0 @@
-numpy
-scipy
-Flask
-pandas
-scikit_learn
-joblib
-requests
