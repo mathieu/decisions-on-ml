@@ -55,18 +55,18 @@ You can test another ML model served by the same REST method.
 ```console
 curl --location --request POST 'http://127.0.0.1:5000/automation/api/v1.0/prediction/generic/' \
 --header 'Content-Type: application/json' \
---data-raw '{
-  "model": {
-    "name": "iris-svc",
-    "version": "1.0",
-    "format": "joblib"
-  },
-  "features": {
-    "sepal length": "5.1",
-    "sepal width": "3.5",
-    "petal length": "1.4",
-    "petal width": "0.2"
-  }
+--data-raw '{ \
+  "model": { \
+    "name": "iris-svc", \
+    "version": "1.0", \
+    "format": "joblib" \
+  }, \
+  "features": { \
+    "sepal length": "5.1", \
+    "sepal width": "3.5", \
+    "petal length": "1.4", \
+    "petal width": "0.2" \
+  } \
 }'
 ```
 You should receive an answer like
