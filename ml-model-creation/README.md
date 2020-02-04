@@ -6,13 +6,14 @@ This projects gathers sample code to create several ML models:
 - a Random Forest Classification model to predict a loan payment default.
 - an Iris multi-classification model.
 
-## Build the ML microservice
+These models have already been trained and serialized as pickle and joblib files with Python 3.6. So running the creation code is necessary only when changing the datasets, models or updating the Python libraries. 
+
+## Creating the ML models
 ```console
 python build*.py
 ```
 ## Check the ML models
-Models are generated under the models folder. Note
+Models are generated under the local models folder and repicated under the model folder of the 2 other microservice projects. 
 ```console
 List of models
 ```
-Note that the other projects have a copy of these models in their folders. So in case you want to run these models into the other projects you should copy them into the models folder in the other projects.
