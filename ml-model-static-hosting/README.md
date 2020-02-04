@@ -29,11 +29,20 @@ You should see a running container for miniloanpredictionservice image.
 http://127.0.0.1:3000/ 
 ```
 You should see a SwaggerUI layout listing the exposed REST methods.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-1.png "OpenAPI")
+![Flow](../docs/images/ml-model-static-hosting-openapi-screen-1.png "OpenAPI menu")
 
-Send a http request and expect a loan repayment default prediction 
-```console
-http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=397&income=160982&loanAmount=570189&monthDuration=240&rate=0.07&yearlyReimbursement=57195
+Open the predictive method.
+![Flow](../docs/images/ml-model-static-hosting-openapi-screen-2.png "Predictive method")
+
+Fill input parameters in the UI to execute the REST endpoint.
+![Flow](../docs/images/ml-model-static-hosting-openapi-screen-3.png "Prediction inputs")
+
+Congratulations! You obtained a risk score computed by the scikit-learn ML model.
+![Flow](../docs/images/ml-model-static-hosting-openapi-screen-4.png "Prediction results")
+
+From there you can get a loan payment default risk score by sending an HTTP request.
+
+
 ```
 Running locally the Docker container
 ```console
