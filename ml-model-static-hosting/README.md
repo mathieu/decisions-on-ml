@@ -29,6 +29,7 @@ You should see a running container for miniloanpredictionservice image.
 http://127.0.0.1:3000/ 
 ```
 You should see a SwaggerUI layout listing the exposed REST methods.
+![Flow](../docs/images/ml-model-static-hosting-openapi-screen-1.png "OpenAPI")
 
 Send a http request and expect a loan repayment default prediction 
 ```console
