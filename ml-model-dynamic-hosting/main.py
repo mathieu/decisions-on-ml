@@ -128,8 +128,6 @@ class PredictionService(Resource):
 
         except:
             return "KO"
-            #return jsonify({'trace': traceback.format_exc()})
-
 
 if __name__ == '__main__':
     # Start a development server

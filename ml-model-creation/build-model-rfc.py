@@ -62,7 +62,18 @@ yearlyReimbursement = 57195
 prediction = model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
 print("prediction with Random Forest Classifier: " + str(prediction) + " expect [0]")
 
+#
 # Model serialization
+#
+
+# Serialization with Pickle
+modelFilePath = 'models/miniloandefault-rfc.joblib'
+pickle.dump(model, open(modelFilePath, 'wb'))
+
+#Testing deserialized model
+loaded_model = pickle.load(open(modelFilePath, 'rb'))
+prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
+print("prediction with serialized SVM: " + str(prediction) + " expect [0]")
 
 
 d = datetime.datetime.today()

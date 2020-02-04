@@ -41,8 +41,6 @@ print("prediction with LR: " + str(prediction) + " expect [0]")
 
 
 
-
-
 prediction = model.predict_proba([[400,17500,27500,12,0.05,40000]]) # expected 0
 print("prediction test 1 with LR: " + str(prediction) + " expect [0]")
 
@@ -51,8 +49,6 @@ print("prediction test 2 with LR: " + str(prediction) + " expect [0]")
 
 prediction = model.predict_proba([[400,17500,100000,12,0.05,57195]]) # expected 0
 print("prediction test 3 with LR: " + str(prediction) + " expect [0]")
-
-
 
 
 
