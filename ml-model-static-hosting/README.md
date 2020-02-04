@@ -37,11 +37,14 @@ Open the predictive method.
 Fill input parameters in the UI to execute the REST endpoint.
 ![Flow](../docs/images/ml-model-stating-hosting-screen-3.png "Prediction inputs")
 
-Congratulations! You obtained a risk score computed by the scikit-learn ML model.
 ![Flow](../docs/images/ml-model-stating-hosting-screen-4.png "Prediction results")
 
-From there you can get a loan payment default risk score by sending an HTTP request.
+Congratulations! You obtained a risk score computed by the scikit-learn ML model.
+In the JSON response you see the probability of a payment default.
 
-The JSON response returns the probability of a payment default.
+You can conduct other tests in the OpenAPI window, OpenAPI generated clients or through a curl command.
 
-You can test the hosted ML method with other parameters and through a curl command.
+## Summary
+You have experimented a lightweight approach to host a scikit-learn ML model and expose it through a REST method.
+The Docker image includes the ML model prepared by a data scientist and shared as a pickle file.
+
