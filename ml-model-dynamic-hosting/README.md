@@ -2,7 +2,7 @@
 
 ### Moving forward a generic microservice to host any scikit-learn model. 
 
-Technology stack is composed of Docker, Python, Flask, scikit-learn, pickle and Joblib.
+Technology stack is composed of Docker, Python, Flask, scikit-learn, and Joblib.
 
 On request arrival for prediction, a Random Forest Classification model is loaded and run to predict a loan payment default.
 Input parameters describing the loan are passed in JSON as the prediction returned by the service.
