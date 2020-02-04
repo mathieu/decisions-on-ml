@@ -4,7 +4,9 @@
 
 Technology stack is composed of Docker, Python, Flask, scikit-learn, and Joblib.
 
-This microservice serves multiple mL models that are packaged in the image. These ML models can even be placed out of the Docker image for more genericity.
+This microservice serves multiple ML models that are packaged in the Docker image. These ML models can even be placed out of the Docker image for more genericity.
+
+We leverage Joblib to serialize the ML models augmented with metadata to help in their comsumption through a generic REST method.
 
 On request arrival for prediction, a model like a Random Forest Classification one is loaded and run to predict a loan payment default.
 Input parameters describing the loan are passed in JSON as the prediction returned by the service.
