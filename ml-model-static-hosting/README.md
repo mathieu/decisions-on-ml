@@ -37,12 +37,7 @@ http://127.0.0.1:3000/prediction/api/v1.0/loandefault?creditScore=397&income=160
 ```
 Running locally the Docker container
 ```console
-curl -d '{"request":{"creditScore":"300","income":"100000","loanAmount":"570189","monthDuration":"240","rate":"0.07","yearlyReimbursement":"57195"}}' -H 'Content-Type: application/json' http://0.0.0.0:3000/automation/api/v1.0/prediction
- ```
- 
-Running main.py on 0.0.0.0:5000
-```console
-curl -d '{"request":{"creditScore":"300","income":"100000","loanAmount":"570189","monthDuration":"240","rate":"0.07","yearlyReimbursement":"57195"}}' -H 'Content-Type: application/json' http://0.0.0.0:5000/automation/api/v1.0/prediction
+curl -X GET "http://127.0.0.1:3000/automation/api/v1.0/prediction/static/prediction/api/v1.0/loandefault?rate=0.05&yearlyReimbursement=12000&income=200000&monthDuration=120&creditScore=600&loanAmount=500000" -H  "accept: application/json"
  ```
 
 ```
