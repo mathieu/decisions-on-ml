@@ -44,4 +44,4 @@ From there you can get a loan payment default risk score by sending an HTTP requ
 
 The JSON response returns the probability of a payment default.
 
-You can test the hosted ML method with otehr parameters and through a curl command.
+You can test the hosted ML method with other parameters and through a curl command.
