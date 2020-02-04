@@ -42,21 +42,6 @@ Congratulations! You obtained a risk score computed by the scikit-learn ML model
 
 From there you can get a loan payment default risk score by sending an HTTP request.
 
+The JSON response returns the probability of a payment default.
 
-```
-Running locally the Docker container
-```console
-curl -X GET "http://127.0.0.1:3000/automation/api/v1.0/prediction/static/prediction/api/v1.0/loandefault?rate=0.05&yearlyReimbursement=12000&income=200000&monthDuration=120&creditScore=600&loanAmount=500000" -H  "accept: application/json"
- ```
-
-```
-You should receive an answer like
-```console
-{
-    "id": "123",
-    "probabilities": {
-        "0": 0.6717663255260751,
-        "1": 0.32823367447392493
-    }
-}
-```
+You can test the hosted ML method with otehr parameters and through a curl command.
