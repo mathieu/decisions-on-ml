@@ -23,8 +23,9 @@ docker ps miniloanpredictionservice
 ```
 You should see a running container for miniloanpredictionservice image.
 
-## Go to OpenAPI descriptor page
-
+## Go to the OpenAPI descriptor page
+The microservice publishes its REST methods through the OpenAPI standard.
+You navidate to the OpenAPI page at the root of the wepp application.
 ```console
 http://127.0.0.1:3000/ 
 ```
