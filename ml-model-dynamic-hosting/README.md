@@ -4,9 +4,11 @@
 
 Technology stack is composed of Docker, Python, Flask, scikit-learn, and Joblib.
 
-On request arrival for prediction, a Random Forest Classification model is loaded and run to predict a loan payment default.
+This microservice serves multiple mL models that are packaged in the image. These ML models can even be placed out of the Docker image for more genericity.
+
+On request arrival for prediction, a model like a Random Forest Classification one is loaded and run to predict a loan payment default.
 Input parameters describing the loan are passed in JSON as the prediction returned by the service.
-Same style of invocation for the classic Iris predictor.
+Same style of invocation for the classic Iris predictive model.
 
 
  ![Flow](../docs/images/ml-model-joblib-microservice-architecture.png "ML microservice stack")
@@ -35,15 +37,6 @@ Make sure that the service is up and responding.
 http://127.0.0.1:3000/isAlive  
 ```
 
-Running locally the Docker container
-```console
-curl -d '{"request":{"creditScore":"300","income":"100000","loanAmount":"570189","monthDuration":"240","rate":"0.07","yearlyReimbursement":"57195"}}' -H 'Content-Type: application/json' http://0.0.0.0:3000/automation/api/v1.0/prediction
- ```
- 
-Running main.py on 0.0.0.0:5000
-```console
-curl -d '{"request":{"creditScore":"300","income":"100000","loanAmount":"570189","monthDuration":"240","rate":"0.07","yearlyReimbursement":"57195"}}' -H 'Content-Type: application/json' http://0.0.0.0:5000/automation/api/v1.0/prediction
- ```
  
 With the following JSON request
 ```console
