@@ -37,6 +37,7 @@ Open the predictive method.
 Fill input parameters in the UI to execute the REST endpoint.
 ![Flow](../docs/images/ml-model-stating-hosting-screen-3.png "Prediction inputs")
 
+After hitting the execute button you then gets the following screen.
 ![Flow](../docs/images/ml-model-stating-hosting-screen-4.png "Prediction results")
 
 Congratulations! You obtained a risk score computed by the scikit-learn ML model.
