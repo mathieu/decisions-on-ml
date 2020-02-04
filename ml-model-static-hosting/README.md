@@ -4,7 +4,7 @@ A simple example of ML running microservice for real time machine learning based
 On request arrival for prediction, a Random Forest Classification model is loaded and run to predict a loan payment default.
 Input parameters describing the loan are passed as HTTP parameters. Prediction is returned by the service.
 
- ![Flow](../docs/images/ml-model-static-microservice-architecture.png "ML microservice stack")
+ ![Flow](../docs/images/ml-model-pickle-microservice-architecture.png "ML microservice stack")
  
 ## Build the ML microservice
 ```console
@@ -23,12 +23,12 @@ docker ps miniloanpredictionservice
 ```
 You should see a running container for miniloanpredictionservice image.
 
-## Test the prediction endpoint
+## Go to OpenAPI descriptor page
 
-Make sure that the service is up and responding.
 ```console
-http://127.0.0.1:3000/isAlive  
+http://127.0.0.1:3000/ 
 ```
+You should see a SwaggerUI layout listing the exposed REST methods.
 
 Send a http request and expect a loan repayment default prediction 
 ```console
