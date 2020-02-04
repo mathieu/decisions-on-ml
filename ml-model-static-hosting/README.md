@@ -23,40 +23,32 @@ docker ps miniloanpredictionservice
 ```
 You should see a running container for miniloanpredictionservice image.
 
-## Go to OpenAPI descriptor page
-
+## Go to the OpenAPI descriptor page
+The microservice publishes its REST methods through the OpenAPI standard.
+You navidate to the OpenAPI page at the root of the wepp application.
 ```console
 http://127.0.0.1:3000/ 
 ```
 You should see a SwaggerUI layout listing the exposed REST methods.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-1.png "OpenAPI menu")
+![Flow](../docs/images/ml-model-static-hosting-screen-1.png "OpenAPI menu")
 
 Open the predictive method.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-2.png "Predictive method")
+![Flow](../docs/images/ml-model-static-hosting-screen-2.png "Predictive method")
 
 Fill input parameters in the UI to execute the REST endpoint.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-3.png "Prediction inputs")
+![Flow](../docs/images/ml-model-static-hosting-screen-3.png "Prediction inputs")
+
+After hitting the execute button you then gets the following screen.
+![Flow](../docs/images/ml-model-static-hosting-screen-4.png "Prediction results")
 
 Congratulations! You obtained a risk score computed by the scikit-learn ML model.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-4.png "Prediction results")
+In the JSON response you see the probability of a payment default.
 
-From there you can get a loan payment default risk score by sending an HTTP request.
+You can conduct other tests in the OpenAPI window, OpenAPI generated clients or through a curl command.
 
+## Summary
+You have experimented a lightweight approach to host a scikit-learn ML model and expose it through a REST method.
+The Docker image includes the ML model prepared by a data scientist and shared as a pickle file.
 
-```
-Running locally the Docker container
-```console
-curl -X GET "http://127.0.0.1:3000/automation/api/v1.0/prediction/static/prediction/api/v1.0/loandefault?rate=0.05&yearlyReimbursement=12000&income=200000&monthDuration=120&creditScore=600&loanAmount=500000" -H  "accept: application/json"
- ```
+Next step will consist in consuming the predictive REST method from an IBM Automation engine running your business logic.
 
-```
-You should receive an answer like
-```console
-{
-    "id": "123",
-    "probabilities": {
-        "0": 0.6717663255260751,
-        "1": 0.32823367447392493
-    }
-}
-```
