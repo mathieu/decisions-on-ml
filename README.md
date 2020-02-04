@@ -2,13 +2,6 @@
 
 This repository includes sample material to show how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
-The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
-- Docker, as a container standard, used here to easily build and deploy a Python environment,
-- Python, the de facto prefered language for ML,
-- Flask and Flask-RESTPlus, frameworks bringing web app and RESTfull APIs,
-- Pickle, a serialization for Python,
-- JobLib, another serialization for Python.
-
 The technical proposal fits with a concept of operations based on 3 main roles and 4 steps:
  - Step 1: A Data scientist elaborates an ML model in a data science tool.
  - Step 2: A Data scientist exports an ML model serialized in pickle of joblib.
@@ -16,6 +9,13 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  - Step 4: A Business user creates a decision service in IBM DBA that invokes the hosted ML model
  
  ![Flow](docs/images/ml-microservice-coo.png "ML microservice stack")
+
+The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
+- Docker, as a container standard, used here to easily build and deploy a Python environment,
+- Python, the de facto prefered language for ML,
+- Flask and Flask-RESTPlus, frameworks bringing web app and RESTfull APIs,
+- Pickle, a serialization for Python,
+- JobLib, another serialization for Python.
 
 
 This repository is composed of 3 projects:
