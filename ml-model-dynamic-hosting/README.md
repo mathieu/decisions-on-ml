@@ -32,12 +32,34 @@ docker ps ml-microservice
 ```
 You should see a running container for miniloanpredictionservice image.
 
-## Go to the OpenAPI page
-
-Connect to the root of the microservice to list the published methods.
+## Go to the OpenAPI descriptor page
+The microservice publishes its REST methods through the OpenAPI standard.
+You navidate to the OpenAPI page at the root of the wepp application.
 ```console
-http://127.0.0.1:3000/isAlive  
+http://127.0.0.1:3000/ 
 ```
+You should see a SwaggerUI layout listing the exposed REST methods.
+![Flow](../docs/images/ml-model-dynamic-hosting-screen-1.png "OpenAPI menu")
+
+Open the predictive method.
+![Flow](../docs/images/ml-model-dynamic-hosting-screen-2.png "Predictive method")
+
+Fill input parameters in the UI to execute the REST endpoint.
+![Flow](../docs/images/ml-model-dynamic-hosting-screen-3.png "Prediction inputs")
+
+After hitting the execute button you then gets the following screen.
+![Flow](../docs/images/ml-model-dynamic-hosting-screen-4.png "Prediction results")
+
+Congratulations! You obtained a risk score computed by the scikit-learn ML model.
+In the JSON response you see the probability of a payment default.
+
+You can conduct other tests in the OpenAPI window, OpenAPI generated clients or through a curl command.
+
+## Summary
+You have experimented a lightweight approach to host a scikit-learn ML model and expose it through a REST method.
+The Docker image includes the ML model prepared by a data scientist and shared as a pickle file.
+
+Next step will consist in consuming the predictive REST method from an IBM Automation engine running your business logic.
 
  
 With the following JSON request
