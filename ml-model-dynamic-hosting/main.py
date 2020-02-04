@@ -2,7 +2,7 @@
 import os
 from flask import Flask, jsonify
 from flask import request, jsonify
-from flask_restplus import Api, Resource
+from flask_restplus import Api, Resource, fields
 from flask_restplus import reqparse
 
 import pandas as pd
@@ -13,6 +13,27 @@ import json
 import requests
 
 #
+# Model registering
+#
+
+modelDictionary = dict({
+    'models': [
+        {
+            'path': "models/miniloandefault-rfc.joblib",
+        },
+        {
+            'path': "models/miniloandefault-svm.joblib",
+        },
+        {
+            'path': "models/iris-svc.joblib",
+        }
+    ]
+})
+
+#todo
+#Propagate the joblib metadata into the model management dictionary
+
+#
 # Flask
 #
 
@@ -21,32 +42,26 @@ api = Api(app)
 
 ns = api.namespace('automation/api/v1.0/prediction/admin', description='administration')
 
+
 @ns.route('/isAlive')  # Create a URL route to this resource
 class HeartBeat(Resource):  # Create a RESTful resource
     def get(self):  # Create GET endpoint
         return {'answer': 'ok'}
 
-@ns.route("/models/<int:model_id>")
-@api.param('model_id', 'The ML model identifier')
-class Conference(Resource):
-    def get(self, model_id):
-        """
-        Displays a model's details
-        """
-    def put(self, model_id):
-        """
-        Edits a selected model
-        """
+
+@ns.route("/models")
+class Model(Resource):
+    def get(self):
+        """Returns the list of ML models."""
+        return modelDictionary
 
 ns = api.namespace('automation/api/v1.0/prediction/generic', description='run any ML models')
 
+modelInvocation = api.model('Name Model', {'name': fields.String(required = True, description="Name of the model", help="Name cannot be blank.")})
+
 @ns.route('/')
 class PredictionService(Resource):
-
-    def get(self):
-        """Returns the list of ML models."""
-        return {'answer': 'ok'}
-
+    @api.expect(modelInvocation)
     @api.response(201, 'Category successfully created.')
     def post(self):
         """Computes a new prediction."""
@@ -65,7 +80,7 @@ class PredictionService(Resource):
             jsonPayloadDictionary = jsonDictionary["features"]
 
             # Compose the model path
-            modelPath = 'models/' + modelName + '.' + 'joblib' #Picking joblib file by default
+            modelPath = 'models/' + modelName + '.' + 'joblib'  # Picking joblib file by default
 
             # Remote read
             # response = requests.get('https://github.com/ODMDev/decisions-on-ml/blob/master/docker-python-flask-sklearn-joblist-json/models/miniloandefault-rfc.joblib?raw=true')
@@ -120,15 +135,16 @@ class PredictionService(Resource):
 
                 responseDictionary["probabilities"] = probabilities
 
-            #json_string = json.dumps(responseDictionary, indent=4)
+            # json_string = json.dumps(responseDictionary, indent=4)
 
-            #print(responseDictionary)
+            # print(responseDictionary)
 
             return responseDictionary
 
         except:
             return "KO"
 
+
 if __name__ == '__main__':
     # Start a development server
-    app.run(port=5000,host='0.0.0.0')
+    app.run(port=5000, host='0.0.0.0')
