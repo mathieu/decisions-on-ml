@@ -2,7 +2,7 @@
 
 This repository includes sample material to show how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
-![Flow](docs/images/ML_microservice_architecture.png "ML microservice stack")
+![Flow](docs/images/ml-microservice-coo.png "ML microservice stack")
 
 The solution puts in practice in this projet articulates :
 - Docker, as a container technology standard, used here to easily build and deploy a Python environment,
