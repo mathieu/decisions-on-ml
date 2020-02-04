@@ -51,39 +51,36 @@ Congratulations! You obtained a risk score computed by the scikit-learn ML model
 In the JSON response you see the probability of a payment default.
 
 You can conduct other tests in the OpenAPI window, OpenAPI generated clients or through a curl command.
-
-With the following JSON request
+You can test another ML model served by the same REST method.
 ```console
-{
+curl --location --request POST 'http://127.0.0.1:5000/automation/api/v1.0/prediction/generic/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
   "model": {
-    "name": "miniloandefault-rfc",
+    "name": "iris-svc",
     "version": "1.0",
     "format": "joblib"
   },
   "features": {
-    "creditScore": "300",
-    "income": "100000",
-    "loanAmount": "570189",
-    "monthDuration": "240",
-    "rate": "0.07",
-    "yearlyReimbursement": "57195"
+    "sepal length": "5.1",
+    "sepal width": "3.5",
+    "petal length": "1.4",
+    "petal width": "0.2"
   }
-}
+}'
 ```
 You should receive an answer like
 ```console
 {
+    "modelPath": "models/iris-svc.joblib",
     "id": "123",
-    "probabilities": {
-        "0": 0.6717663255260751,
-        "1": 0.32823367447392493
-    }
+    "prediction": 0
 }
 ```
 
 ## Summary
-You have experimented a lightweight approach to host a scikit-learn ML model and expose it through a REST method.
-The Docker image includes the ML model prepared by a data scientist and shared as a pickle file.
+You have experimented a lightweight approach to host multiple scikit-learn ML models and expose them through a generic REST method.
+The Docker image includes the ML models prepared by a data scientist and shared as Joblib files.
 
 Next step will consist in consuming the predictive REST method from an IBM Automation engine running your business logic.
 
