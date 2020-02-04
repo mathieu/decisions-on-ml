@@ -23,12 +23,12 @@ docker ps miniloanpredictionservice
 ```
 You should see a running container for miniloanpredictionservice image.
 
-## Test the prediction endpoint
+## Go to OpenAPI descriptor page
 
-Make sure that the service is up and responding.
 ```console
-http://127.0.0.1:3000/isAlive  
+http://127.0.0.1:3000/ 
 ```
+You should see a SwaggerUI layout listing the exposed REST methods.
 
 Send a http request and expect a loan repayment default prediction 
 ```console
