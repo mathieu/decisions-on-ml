@@ -48,3 +48,5 @@ You can conduct other tests in the OpenAPI window, OpenAPI generated clients or 
 You have experimented a lightweight approach to host a scikit-learn ML model and expose it through a REST method.
 The Docker image includes the ML model prepared by a data scientist and shared as a pickle file.
 
+Next step consists in consuming the predictive REST method from an IBM Automation engine running your business logic.
+
