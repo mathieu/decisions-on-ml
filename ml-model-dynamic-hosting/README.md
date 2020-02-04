@@ -30,9 +30,9 @@ docker ps ml-microservice
 ```
 You should see a running container for miniloanpredictionservice image.
 
-## Test the prediction endpoint
+## Go to the OpenAPI page
 
-Make sure that the service is up and responding.
+Connect to the root of the microservice to list the published methods.
 ```console
 http://127.0.0.1:3000/isAlive  
 ```
