@@ -65,19 +65,19 @@ Next step will consist in consuming the predictive REST method from an IBM Autom
 With the following JSON request
 ```console
 {
-    "model":" {
-        "name": toto",
-        "version":"1.0",
-        "format": "joblib"
-        }
-    "features": {
-        "creditScore": "300",
-        "income": "100000",
-        "loanAmount": "570189",
-        "monthDuration": "240",
-        "rate": "0.07",
-        "yearlyReimbursement": "57195"
-    }
+  "model": {
+    "name": "miniloandefault-rfc",
+    "version": "1.0",
+    "format": "joblib"
+  },
+  "features": {
+    "creditScore": "300",
+    "income": "100000",
+    "loanAmount": "570189",
+    "monthDuration": "240",
+    "rate": "0.07",
+    "yearlyReimbursement": "57195"
+  }
 }
 ```
 You should receive an answer like
