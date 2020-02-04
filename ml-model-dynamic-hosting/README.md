@@ -55,13 +55,6 @@ In the JSON response you see the probability of a payment default.
 
 You can conduct other tests in the OpenAPI window, OpenAPI generated clients or through a curl command.
 
-## Summary
-You have experimented a lightweight approach to host a scikit-learn ML model and expose it through a REST method.
-The Docker image includes the ML model prepared by a data scientist and shared as a pickle file.
-
-Next step will consist in consuming the predictive REST method from an IBM Automation engine running your business logic.
-
- 
 With the following JSON request
 ```console
 {
@@ -90,3 +83,12 @@ You should receive an answer like
     }
 }
 ```
+
+## Summary
+You have experimented a lightweight approach to host a scikit-learn ML model and expose it through a REST method.
+The Docker image includes the ML model prepared by a data scientist and shared as a pickle file.
+
+Next step will consist in consuming the predictive REST method from an IBM Automation engine running your business logic.
+
+ 
+
