@@ -4,7 +4,7 @@ A simple example of ML running microservice for real time machine learning based
 On request arrival for prediction, a Random Forest Classification model is loaded and run to predict a loan payment default.
 Input parameters describing the loan are passed as HTTP parameters. Prediction is returned by the service.
 
- ![Flow](../docs/images/ml-model-static-pickle-microservice-architecture.png "ML microservice stack")
+ ![Flow](../docs/images/ml-model-pickle-microservice-architecture.png "ML microservice stack")
  
 ## Build the ML microservice
 ```console
