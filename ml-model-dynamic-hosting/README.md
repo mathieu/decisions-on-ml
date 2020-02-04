@@ -1,6 +1,8 @@
 # A generic purpose ML micro service
 
-### Moving forward a generic microservice to host any scikit-learn model. Technology stack is composed of Docker, Python, Flask, scikit-learn, pickle and Joblib.
+### Moving forward a generic microservice to host any scikit-learn model. 
+
+Technology stack is composed of Docker, Python, Flask, scikit-learn, pickle and Joblib.
 
 On request arrival for prediction, a Random Forest Classification model is loaded and run to predict a loan payment default.
 Input parameters describing the loan are passed in JSON as the prediction returned by the service.
@@ -19,7 +21,7 @@ Note that you can run the server without Docker by starting main.py on your loca
 
 ## Check
 ```console
-docker ps miniloanpredictionservice 
+docker ps ml-microservice 
 ```
 You should see a running container for miniloanpredictionservice image.
 
