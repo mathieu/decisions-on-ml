@@ -51,23 +51,22 @@ Congratulations! You obtained a risk score computed by the scikit-learn ML model
 In the JSON response you see the probability of a payment default.
 
 You can conduct other tests in the OpenAPI window, OpenAPI generated clients or through a curl command.
-You can test another ML model served by the same REST method.
+You can test another ML model served by the same REST method with the following payload. We are now invoking a Support Verctor Machine model to classify Iris, a classic sample dataset.
+
 ```console
-curl --location --request POST 'http://127.0.0.1:5000/automation/api/v1.0/prediction/generic/' \
---header 'Content-Type: application/json' \
---data-raw '{ \
-  "model": { \
-    "name": "iris-svc", \
-    "version": "1.0", \
-    "format": "joblib" \
-  }, \
-  "features": { \
-    "sepal length": "5.1", \
-    "sepal width": "3.5", \
-    "petal length": "1.4", \
-    "petal width": "0.2" \
-  } \
-}'
+{
+  "model": {
+    "name": "iris-svc",
+    "version": "1.0",
+    "format": "joblib"
+  },
+  "features": {
+    "sepal length": "5.1",
+    "sepal width": "3.5",
+    "petal length": "1.4",
+    "petal width": "0.2"
+  }
+}
 ```
 You should receive an answer like
 ```console
