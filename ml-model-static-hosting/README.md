@@ -29,16 +29,16 @@ You should see a running container for miniloanpredictionservice image.
 http://127.0.0.1:3000/ 
 ```
 You should see a SwaggerUI layout listing the exposed REST methods.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-1.png "OpenAPI menu")
+![Flow](../docs/images/ml-model-stating-hosting-screen-1.png "OpenAPI menu")
 
 Open the predictive method.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-2.png "Predictive method")
+![Flow](../docs/images/ml-model-stating-hosting-screen-2.png "Predictive method")
 
 Fill input parameters in the UI to execute the REST endpoint.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-3.png "Prediction inputs")
+![Flow](../docs/images/ml-model-stating-hosting-screen-3.png "Prediction inputs")
 
 Congratulations! You obtained a risk score computed by the scikit-learn ML model.
-![Flow](../docs/images/ml-model-static-hosting-openapi-screen-4.png "Prediction results")
+![Flow](../docs/images/ml-model-stating-hosting-screen-4.png "Prediction results")
 
 From there you can get a loan payment default risk score by sending an HTTP request.
 
