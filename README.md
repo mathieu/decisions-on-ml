@@ -2,7 +2,7 @@
 
 This repository includes sample material to show how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
-The technologies selected here to fullfill lightweight machine learning predictive models are:
+The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
 - Docker, as a container standard, used here to easily build and deploy a Python environment,
 - Python, the de facto prefered language for ML,
 - Flask and Flask-RESTPlus, frameworks bringing web app and RESTfull APIs,
