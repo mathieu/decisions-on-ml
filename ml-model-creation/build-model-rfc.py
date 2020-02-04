@@ -50,7 +50,7 @@ prediction = model.predict_proba([[600, 80000, 400000, 120, 0.05, 75195]])  # ex
 print("prediction test 2 with Random Forest Classifier: " + str(prediction) + " expect [0]")
 
 prediction = model.predict_proba([[500, 60000, 1000000, 120, 0.05, 75195]])  # expected 0
-print("prediction test 3 with Random Forest Classifier: " + str(prediction) + " expect [1]")
+print("prediction test 3 with Random Forest Classifier: " + str(prediction) + " expect [0]")
 
 creditScore = 397
 income = 160982
