@@ -14,6 +14,4 @@ python build*.py
 ```
 ## Check the ML models
 Models are generated under the local models folder and repicated under the model folder of the 2 other microservice projects. 
-```console
-List of models
-```
+
