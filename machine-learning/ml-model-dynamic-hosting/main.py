@@ -57,12 +57,29 @@ class Model(Resource):
 
 ns = api.namespace('automation/api/v1.0/prediction/generic', description='run any ML models')
 
-modelInvocation = api.model('Name Model', {'name': fields.String(required = True, description="Name of the model", help="Name cannot be blank.")})
+model_descriptor = api.model('ModelDescriptor', {
+    'path': fields.String(required = True, description="Local path of the model", help="Name cannot be blank."),
+    'version': fields.String(required = True, description="Version of the model", help="Name cannot be blank."),
+    'format': fields.String(required = True, description="Format of the model", help="Name cannot be blank.")
+    })
+
+prediction_request = api.model('PredictionRequest', {
+    'model': fields.Nested(model_descriptor),
+    'features': fields.List(fields.Wildcard(fields.String))
+    })
+
+prediction_response = api.model('PredictionResponse', {
+    'path': fields.String(required = True, description="Local path of the invoked predictive model", help="Name cannot be blank."),
+    'id': fields.String(required = True, description="Uuid of the prediction", help="Name cannot be blank."),
+    'prediction': fields.String(required = True, description="The prediction", help="Name cannot be blank."),
+    'probabilities': fields.List(fields.Wildcard(fields.String))
+
+})
 
 @ns.route('/')
 class PredictionService(Resource):
-    @api.expect(modelInvocation)
-    @api.response(201, 'Category successfully created.')
+    @api.expect(prediction_request)
+    @api.response(201, 'Category successfully created.', prediction_response)
     def post(self):
         """Computes a new prediction."""
 
