@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6ef35375-1494-4310-9b7c-8c59c6c5d2c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Loan Validation Service.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/.ruleproject" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/Miniloan Test.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/bom/miniloan.b2xa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/bom/miniloan.bom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/bom/miniloan_en.voc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/deployment/Miniloan ServiceOperation.dop" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/deployment/Miniloan.dep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/miniloan-test.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/resources/xom-libraries/miniloan-xom.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/rules/Miniloan ServiceParameters.var" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/rules/eligibility/.rulepackage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/rules/eligibility/minimum credit score.brl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/rules/eligibility/minimum income.brl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/rules/eligibility/repayment and score.dta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/rules/miniloan.rfl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/rules/validation/.rulepackage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/rules/validation/maximum amount.brl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Miniloan Service/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shipment Pricing.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/home.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/icon_cloud_deploy_close.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/icon_deploy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/icon_import_dservice.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/icon_merge_create_plus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/icon_miniloan_ruleflow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/icon_run_testsuite.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/icon_take_snapshot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/next.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_classic_dterror.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_curl_result.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_decision_artifacts.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_decision_table_salaryscore.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_delete_decision_service.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_deploy_resnav_icp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_deploy_view_icp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_deploystatus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_expected_results_sheet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_follow_rules_menu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_miniloan_ruleflow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_report_details.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_rules_followed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_scenarios_sheet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_images/scrn_server_response.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_topics/tut_icp_gs_clean_db_lsn.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_topics/tut_icp_gs_create_rules_lsn.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_topics/tut_icp_gs_evaluate_changes_lsn.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_topics/tut_icp_gs_int.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_topics/tut_icp_gs_test_deploy_lsn.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs_topics/tut_icp_gs_test_ruleset_lsn.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../miniloan-xom/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../miniloan-xom/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../miniloan-xom/src/miniloan/Borrower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../miniloan-xom/src/miniloan/Loan.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/docker-python-flask-scikit-learn.iml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZrFmFu2jJF0XC27K8G3jo40TZd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xgb-model-dynamic-hosting/models" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../xgb-model-dynamic-hosting/models" />
+      <recent name="$PROJECT_DIR$/../ml-model-dynamic-hosting/models" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main (2)">
+    <configuration name="build-model-rfc" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="decisions-on-ml" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ml-model-creation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ml-model-creation/build-model-rfc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="build-model-xgb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="decisions-on-ml" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ml-model-creation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ml-model-creation/build-model-xgb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="docker-python-flask-scikit-learn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ml-model-dynamic-hosting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ml-model-dynamic-hosting/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="decisions-on-ml" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../machine-learning/ml-model-dynamic-hosting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../machine-learning/ml-model-dynamic-hosting/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="decisions-on-ml" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../xgb-model-dynamic-hosting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../xgb-model-dynamic-hosting/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.build-model-rfc" />
+      <item itemvalue="Python.build-model-xgb" />
+      <item itemvalue="Python.main (1)" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.main (2)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main (2)" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.build-model-xgb" />
+        <item itemvalue="Python.build-model-rfc" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ef35375-1494-4310-9b7c-8c59c6c5d2c5" name="Default Changelist" comment="" />
+      <created>1580216432990</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580216432990</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="373" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585648727973">
+      <screen x="0" y="23" width="1680" height="1000" />
+    </state>
+    <state x="413" y="373" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585648727973" />
+    <state width="1920" height="463" key="DebuggerActiveHint" timestamp="1585671813333">
+      <screen x="1680" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1680" height="438" key="DebuggerActiveHint/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585657385307" />
+    <state width="1920" height="463" key="DebuggerActiveHint/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585671813333" />
+    <state width="1535" height="274" key="GridCell.Tab.0.bottom" timestamp="1585831575421">
+      <screen x="0" y="23" width="1680" height="1002" />
+    </state>
+    <state width="1535" height="230" key="GridCell.Tab.0.bottom/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585735560497" />
+    <state width="1535" height="230" key="GridCell.Tab.0.bottom/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585674052739" />
+    <state width="1535" height="230" key="GridCell.Tab.0.bottom/1680.23.1920.1057/0.23.1680.1001@0.23.1680.1001" timestamp="1585752796817" />
+    <state width="1535" height="274" key="GridCell.Tab.0.bottom/1680.23.1920.1057/0.23.1680.1002@0.23.1680.1002" timestamp="1585831575421" />
+    <state width="1535" height="274" key="GridCell.Tab.0.center" timestamp="1585831575420">
+      <screen x="0" y="23" width="1680" height="1002" />
+    </state>
+    <state width="1535" height="230" key="GridCell.Tab.0.center/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585735560496" />
+    <state width="1535" height="230" key="GridCell.Tab.0.center/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585674052738" />
+    <state width="1535" height="230" key="GridCell.Tab.0.center/1680.23.1920.1057/0.23.1680.1001@0.23.1680.1001" timestamp="1585752796816" />
+    <state width="1535" height="274" key="GridCell.Tab.0.center/1680.23.1920.1057/0.23.1680.1002@0.23.1680.1002" timestamp="1585831575420" />
+    <state width="1535" height="274" key="GridCell.Tab.0.left" timestamp="1585831575416">
+      <screen x="0" y="23" width="1680" height="1002" />
+    </state>
+    <state width="1535" height="230" key="GridCell.Tab.0.left/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585735560496" />
+    <state width="1535" height="230" key="GridCell.Tab.0.left/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585674052737" />
+    <state width="1535" height="230" key="GridCell.Tab.0.left/1680.23.1920.1057/0.23.1680.1001@0.23.1680.1001" timestamp="1585752796815" />
+    <state width="1535" height="274" key="GridCell.Tab.0.left/1680.23.1920.1057/0.23.1680.1002@0.23.1680.1002" timestamp="1585831575416" />
+    <state width="1535" height="274" key="GridCell.Tab.0.right" timestamp="1585831575420">
+      <screen x="0" y="23" width="1680" height="1002" />
+    </state>
+    <state width="1535" height="230" key="GridCell.Tab.0.right/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585735560497" />
+    <state width="1535" height="230" key="GridCell.Tab.0.right/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585674052738" />
+    <state width="1535" height="230" key="GridCell.Tab.0.right/1680.23.1920.1057/0.23.1680.1001@0.23.1680.1001" timestamp="1585752796816" />
+    <state width="1535" height="274" key="GridCell.Tab.0.right/1680.23.1920.1057/0.23.1680.1002@0.23.1680.1002" timestamp="1585831575420" />
+    <state width="1535" height="274" key="GridCell.Tab.1.bottom" timestamp="1585831386967">
+      <screen x="0" y="23" width="1680" height="1002" />
+    </state>
+    <state width="1535" height="274" key="GridCell.Tab.1.bottom/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585657732052" />
+    <state width="1535" height="274" key="GridCell.Tab.1.bottom/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585672414092" />
+    <state width="1379" height="300" key="GridCell.Tab.1.bottom/1680.23.1920.1057/0.23.1680.1001@0.23.1680.1001" timestamp="1585640700321" />
+    <state width="1535" height="274" key="GridCell.Tab.1.bottom/1680.23.1920.1057/0.23.1680.1002@0.23.1680.1002" timestamp="1585831386967" />
+    <state width="1535" height="274" key="GridCell.Tab.1.center" timestamp="1585831386966">
+      <screen x="0" y="23" width="1680" height="1002" />
+    </state>
+    <state width="1535" height="274" key="GridCell.Tab.1.center/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585657732051" />
+    <state width="1535" height="274" key="GridCell.Tab.1.center/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585672414091" />
+    <state width="1379" height="300" key="GridCell.Tab.1.center/1680.23.1920.1057/0.23.1680.1001@0.23.1680.1001" timestamp="1585640700320" />
+    <state width="1535" height="274" key="GridCell.Tab.1.center/1680.23.1920.1057/0.23.1680.1002@0.23.1680.1002" timestamp="1585831386966" />
+    <state width="1535" height="274" key="GridCell.Tab.1.left" timestamp="1585831386965">
+      <screen x="0" y="23" width="1680" height="1002" />
+    </state>
+    <state width="1535" height="274" key="GridCell.Tab.1.left/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585657732050" />
+    <state width="1535" height="274" key="GridCell.Tab.1.left/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585672414090" />
+    <state width="1379" height="300" key="GridCell.Tab.1.left/1680.23.1920.1057/0.23.1680.1001@0.23.1680.1001" timestamp="1585640700319" />
+    <state width="1535" height="274" key="GridCell.Tab.1.left/1680.23.1920.1057/0.23.1680.1002@0.23.1680.1002" timestamp="1585831386965" />
+    <state width="1535" height="274" key="GridCell.Tab.1.right" timestamp="1585831386967">
+      <screen x="0" y="23" width="1680" height="1002" />
+    </state>
+    <state width="1535" height="274" key="GridCell.Tab.1.right/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585657732052" />
+    <state width="1535" height="274" key="GridCell.Tab.1.right/1680.23.1920.1057/0.23.1680.1000@1680.23.1920.1057" timestamp="1585672414092" />
+    <state width="1379" height="300" key="GridCell.Tab.1.right/1680.23.1920.1057/0.23.1680.1001@0.23.1680.1001" timestamp="1585640700320" />
+    <state width="1535" height="274" key="GridCell.Tab.1.right/1680.23.1920.1057/0.23.1680.1002@0.23.1680.1002" timestamp="1585831386967" />
+    <state x="280" y="155" key="SettingsEditor" timestamp="1585596772398">
+      <screen x="0" y="23" width="1680" height="1000" />
+    </state>
+    <state x="280" y="155" key="SettingsEditor/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585596772398" />
+    <state x="517" y="355" key="com.intellij.ide.util.TipDialog" timestamp="1585596566726">
+      <screen x="0" y="23" width="1680" height="1000" />
+    </state>
+    <state x="517" y="355" key="com.intellij.ide.util.TipDialog/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585596566726" />
+    <state x="408" y="243" width="670" height="676" key="search.everywhere.popup" timestamp="1585648418961">
+      <screen x="0" y="23" width="1680" height="1000" />
+    </state>
+    <state x="408" y="243" width="670" height="676" key="search.everywhere.popup/1680.23.1920.1057/0.23.1680.1000@0.23.1680.1000" timestamp="1585648418961" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/build-model-rf.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../ml-model-creation/build-model-rfc.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

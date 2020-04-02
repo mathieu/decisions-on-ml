@@ -1,0 +1,6 @@
+org/openapitools/client/api/AutomationApiV10PredictionAdminApiTest.class
+org/openapitools/client/api/AutomationApiV10PredictionGenericApiTest.class
+org/openapitools/client/model/ModelKeyDescriptorTest.class
+org/openapitools/client/model/ModelResponseTest.class
+org/openapitools/client/model/ModelInvocationTest.class
+org/openapitools/client/model/ModelSpecificationTest.class
