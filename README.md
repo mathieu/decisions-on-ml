@@ -2,6 +2,8 @@
 
 This repository includes sample material to show how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
+Test
+
 The technical proposal fits with a concept of operations based on 3 main roles and 4 steps:
  - Step 1: A Data scientist elaborates an ML model in a data science tool.
  - Step 2: A Data scientist exports an ML model serialized in pickle of joblib.
