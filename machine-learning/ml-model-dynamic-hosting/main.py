@@ -1,5 +1,6 @@
 #!flask/bin/python
 import os
+import uuid
 from flask import Flask, jsonify
 from flask import request, jsonify
 from flask_restplus import Api, Resource, fields
@@ -62,12 +63,6 @@ model_key_descriptor = api.model('ModelKeyDescriptor', {
     'format': fields.String(required=True, description="Format of the model", help="Name cannot be blank.")
 })
 
-model_descriptor = api.model('ModelDescriptor', {
-    'path': fields.String(required=True, description="Local path of the model", help="Name cannot be blank."),
-    'version': fields.String(required=True, description="Version of the model", help="Name cannot be blank."),
-    'format': fields.String(required=True, description="Format of the model", help="Name cannot be blank.")
-})
-
 model_schema = api.model('ModelSchema', {
     'schema': fields.String(required=True, description="Schema of the model", help="Name cannot be blank.")
 })
@@ -103,6 +98,12 @@ class ModelSchema(Resource):
 
 ns = api.namespace('automation/api/v1.0/prediction/generic', description='run any ML models')
 
+model_descriptor = api.model('ModelDescriptor', {
+    'path': fields.String(required=True, description="Local path of the model", help="Name cannot be blank."),
+    'version': fields.String(required=True, description="Version of the model", help="Name cannot be blank."),
+    'format': fields.String(required=True, description="Format of the model", help="Name cannot be blank.")
+})
+
 prediction_request = api.model('PredictionRequest', {
     'model': fields.Nested(model_descriptor),
     'features': fields.Wildcard(fields.String)
@@ -112,7 +113,7 @@ prediction_response = api.model('PredictionResponse', {
     'path': fields.String(required=True, description="Local path of the invoked predictive model",
                           help="Name cannot be blank."),
     'id': fields.String(required=True, description="Uuid of the prediction", help="Name cannot be blank."),
-    'prediction': fields.String(required=True, description="The prediction", help="Name cannot be blank."),
+    'prediction': fields.String(required=False, description="The prediction", help="Name cannot be blank."),
     'probabilities': fields.Wildcard(fields.String)
 
 })
@@ -131,7 +132,7 @@ class PredictionService(Resource):
 
             # Model
             jsonModelDictionary = jsonDictionary["model"]
-            modelName = jsonModelDictionary["name"]
+            modelName = jsonModelDictionary["path"]
             modelVersion = jsonModelDictionary["version"]
             modelFormat = jsonModelDictionary["format"]
 
@@ -169,8 +170,8 @@ class PredictionService(Resource):
             predictionWrapper = 0
 
             responseDictionary = {
-                "modelPath": modelPath,
-                "id": "123"
+                "path": modelPath,
+                "id": str(uuid.uuid4())
             }
 
             if invocationMethod == 'predict':
@@ -196,7 +197,7 @@ class PredictionService(Resource):
 
             # json_string = json.dumps(responseDictionary, indent=4)
 
-            # print(responseDictionary)
+            print(responseDictionary)
 
             return responseDictionary
 
