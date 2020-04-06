@@ -10,6 +10,12 @@ The machine-learning section of the repository is composed of 2 main parts:
    - ml hosting with microservices
    - sdk to remotely get a prediction from the microservice and manage the ML models
 
+The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
+- Docker, as a container standard, used here to easily build and deploy a Python environment,
+- Python, the de facto prefered language for ML,
+- Flask and Flask-RESTPlus, frameworks bringing web app and RESTfull APIs,
+- Pickle, an object serialization for Python,
+- JobLib, another object serialization for Python.
 
 The ML hosting is composed of 3 projects:
 - [ML model creation](ml-model-creation/README.md): Several source files to create variations of ML models with scikit-learn to predict a default for a loan repayment. These models are stored in the file system through a pickle serialization or JobLib serialization.
