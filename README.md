@@ -13,7 +13,9 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  - Step 3: A developer takes the serialized ML model and hosts it as a microservice
  - Step 4: A Business user creates a decision service in IBM Digital Business Automation that invokes the hosted ML model
  
- ![Flow](docs/images/e2e-decision-management.png =100x20 "e2e-decision-management.png")
+ <img src="docs/images/e2e-decision-management.png" alt="e2e-decision-management.png" width="100" height="100">
+ 
+ #![Flow](docs/images/e2e-decision-management.png =100x20 "e2e-decision-management.png")
 
 The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
 - Docker, as a container standard, used here to easily build and deploy a Python environment,
