@@ -1,4 +1,4 @@
-# SDK for a ML micro-service
+# SDK for the ML micro-service
 
 The SDK folder includes:
 - a ready to use Java SDK,
