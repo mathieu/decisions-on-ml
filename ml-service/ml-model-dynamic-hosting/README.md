@@ -53,13 +53,13 @@ Open the following method and enter this payload to designated a loan repayment 
 }
 ```
 Open the predictive method and fill the input parameters in the UI to execute the REST endpoint.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-ui-2.png "Prediction inputs")
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-2.png "Prediction inputs")
 
 Open the predictive method and fill the input parameters in the UI to execute the REST endpoint.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-ui-3.png "Prediction inputs")
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-3.png "Prediction inputs")
 
 Open the predictive method and fill the input parameters in the UI to execute the REST endpoint.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-ui-2.png "Prediction inputs")
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-2.png "Prediction inputs")
 
 After hitting the execute button you then gets the following screen.
 ![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-screen-3.png "Prediction results")
