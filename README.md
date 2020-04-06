@@ -2,6 +2,11 @@
 
 This repository includes sample material to show how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
+Material aims at tackling 3 challenges:
+- how to host ML models in a simple and portable form factor,
+- how to provide SDKs to easily consume ML driven predictions from remote applications,
+- with the benefit ofsuch SDK and ML micro service how to combine business rules and predictions in a decision service project.
+
 The technical proposal fits with a concept of operations based on 3 main roles and 4 steps:
  - Step 1: A Data scientist elaborates an ML model in a data science tool.
  - Step 2: A Data scientist exports an ML model serialized in pickle or joblib.
@@ -9,11 +14,6 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  - Step 4: A Business user creates a decision service in IBM Digital Business Automation that invokes the hosted ML model
  
  ![Flow](docs/images/ml-microservice-coo-overview.png "e2e-decision-management.png")
-
-Material aims at tackling 3 challenges:
-- how to host ML models in a simple and portable form factor,
-- how to provide SDKs to easily consume ML driven predictions from remote applications,
-- with the benefit ofsuch SDK and ML micro service how to combine business rules and predictions in a decision service project.
 
 The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
 - Docker, as a container standard, used here to easily build and deploy a Python environment,
