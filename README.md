@@ -15,12 +15,7 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  
  <img src="docs/images/e2e-decision-management.png" alt="e2e-decision-management.png" width="600" height="450">
 
-The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
-- Docker, as a container standard, used here to easily build and deploy a Python environment,
-- Python, the de facto prefered language for ML,
-- Flask and Flask-RESTPlus, frameworks bringing web app and RESTfull APIs,
-- Pickle, an object serialization for Python,
-- JobLib, another object serialization for Python.
+The approaches combines Python for ML, Docker and OpenAPI.
 
 This repository is composed of 2 main parts:
 - [machine-learning](machine-learning/README.md)
