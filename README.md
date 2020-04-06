@@ -13,7 +13,7 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  - Step 3: A developer takes the serialized ML model and hosts it as a microservice
  - Step 4: A Business user creates a decision service in IBM Digital Business Automation that invokes the hosted ML model
  
- <img src="docs/images/e2e-decision-management.png" alt="e2e-decision-management.png" width="400" height="400">
+ <img src="docs/images/e2e-decision-management.png" alt="e2e-decision-management.png" width="500" height="600">
  
  #![Flow](docs/images/e2e-decision-management.png =100x20 "e2e-decision-management.png")
 
