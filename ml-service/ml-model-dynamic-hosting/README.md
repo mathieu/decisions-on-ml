@@ -61,6 +61,24 @@ Execute to retrieve the ML schema.
 Open the predictive method and fill the input parameters in the UI to execute the REST endpoint.
 ![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-predict-1.png "Prediction inputs")
 
+```console
+{
+  "model": {
+    "name": "miniloandefault-xgb",
+    "version": "1.0",
+    "format": "joblib"
+  },
+  "features": {
+    "creditScore": "5.1",
+    "income": "3.5",
+    "loanAmount": "2.4",
+    "monthDuration": "0.2",
+    "rate" : "0.07",
+    "yearlyReimbursement" : "10000.0"
+  }
+}
+```
+
 After hitting the execute button you then gets the following screen.
 ![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-predict-2.png "Prediction results")
 
