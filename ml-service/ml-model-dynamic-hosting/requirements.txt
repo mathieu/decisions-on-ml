@@ -1,0 +1,10 @@
+numpy
+scipy
+Werkzeug==0.16.1
+Flask
+flask-restplus
+pandas
+scikit_learn
+joblib
+requests
+sklearn-pmml-model
