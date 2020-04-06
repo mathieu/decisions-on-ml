@@ -64,7 +64,7 @@ Open the predictive method and fill the input parameters in the UI to execute th
 ```console
 {
   "model": {
-    "name": "miniloandefault-xgb",
+    "name": "miniloandefault-rfc",
     "version": "1.0",
     "format": "joblib"
   },
@@ -117,6 +117,3 @@ You have experimented a lightweight approach to host multiple scikit-learn ML mo
 The Docker image includes the ML models prepared by a data scientist and shared as Joblib files.
 
 Next step will consist in consuming the predictive REST method from an IBM Automation engine running your business logic.
-
- 
-
