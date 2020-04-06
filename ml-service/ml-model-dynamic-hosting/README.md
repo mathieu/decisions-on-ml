@@ -68,11 +68,11 @@ Open the predictive method and fill the input parameters in the UI to execute th
     "format": "joblib"
   },
   "features": {
-    "creditScore": "5.1",
-    "income": "3.5",
-    "loanAmount": "2.4",
-    "monthDuration": "0.2",
-    "rate" : "0.07",
+    "creditScore": "800",
+    "income": "100000",
+    "loanAmount": "100000",
+    "monthDuration": "120",
+    "rate" : "0.03",
     "yearlyReimbursement" : "10000.0"
   }
 }
