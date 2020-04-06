@@ -21,49 +21,41 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.ModelMetadata;
-import org.openapitools.client.model.ModelSignature;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for ModelSchema
+ * Model tests for ModelSignature
  */
-public class ModelSchemaTest {
-    private final ModelSchema model = new ModelSchema();
+public class ModelSignatureTest {
+    private final ModelSignature model = new ModelSignature();
 
     /**
-     * Model tests for ModelSchema
+     * Model tests for ModelSignature
      */
     @Test
-    public void testModelSchema() {
-        // TODO: test ModelSchema
+    public void testModelSignature() {
+        // TODO: test ModelSignature
     }
 
     /**
-     * Test the property 'metadata'
+     * Test the property 'input'
      */
     @Test
-    public void metadataTest() {
-        // TODO: test metadata
+    public void inputTest() {
+        // TODO: test input
     }
 
     /**
-     * Test the property 'signature'
+     * Test the property 'output'
      */
     @Test
-    public void signatureTest() {
-        // TODO: test signature
-    }
-
-    /**
-     * Test the property 'customProperties'
-     */
-    @Test
-    public void customPropertiesTest() {
-        // TODO: test customProperties
+    public void outputTest() {
+        // TODO: test output
     }
 
 }

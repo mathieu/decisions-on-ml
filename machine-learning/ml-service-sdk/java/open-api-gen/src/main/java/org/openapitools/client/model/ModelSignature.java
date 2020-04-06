@@ -23,76 +23,82 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import org.openapitools.client.model.ModelDescriptor;
 
 /**
- * PredictionRequest
+ * ModelSignature
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-05T17:40:11.794575+02:00[Europe/Paris]")
-public class PredictionRequest {
-  public static final String SERIALIZED_NAME_MODEL = "model";
-  @SerializedName(SERIALIZED_NAME_MODEL)
-  private ModelDescriptor model;
+public class ModelSignature {
+  public static final String SERIALIZED_NAME_INPUT = "input";
+  @SerializedName(SERIALIZED_NAME_INPUT)
+  private List<Object> input = null;
 
-  public static final String SERIALIZED_NAME_FEATURES = "features";
-  @SerializedName(SERIALIZED_NAME_FEATURES)
-  private Map<String, String> features = null;
+  public static final String SERIALIZED_NAME_OUTPUT = "output";
+  @SerializedName(SERIALIZED_NAME_OUTPUT)
+  private List<Object> output = null;
 
 
-  public PredictionRequest model(ModelDescriptor model) {
+  public ModelSignature input(List<Object> input) {
     
-    this.model = model;
+    this.input = input;
     return this;
   }
 
-   /**
-   * Get model
-   * @return model
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ModelDescriptor getModel() {
-    return model;
-  }
-
-
-  public void setModel(ModelDescriptor model) {
-    this.model = model;
-  }
-
-
-  public PredictionRequest features(Map<String, String> features) {
-    
-    this.features = features;
-    return this;
-  }
-
-  public PredictionRequest putFeaturesItem(String key, String featuresItem) {
-    if (this.features == null) {
-      this.features = new HashMap<String, String>();
+  public ModelSignature addInputItem(Object inputItem) {
+    if (this.input == null) {
+      this.input = new ArrayList<Object>();
     }
-    this.features.put(key, featuresItem);
+    this.input.add(inputItem);
     return this;
   }
 
    /**
-   * Get features
-   * @return features
+   * Get input
+   * @return input
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Map<String, String> getFeatures() {
-    return features;
+  public List<Object> getInput() {
+    return input;
   }
 
 
-  public void setFeatures(Map<String, String> features) {
-    this.features = features;
+  public void setInput(List<Object> input) {
+    this.input = input;
+  }
+
+
+  public ModelSignature output(List<Object> output) {
+    
+    this.output = output;
+    return this;
+  }
+
+  public ModelSignature addOutputItem(Object outputItem) {
+    if (this.output == null) {
+      this.output = new ArrayList<Object>();
+    }
+    this.output.add(outputItem);
+    return this;
+  }
+
+   /**
+   * Get output
+   * @return output
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<Object> getOutput() {
+    return output;
+  }
+
+
+  public void setOutput(List<Object> output) {
+    this.output = output;
   }
 
 
@@ -104,23 +110,23 @@ public class PredictionRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PredictionRequest predictionRequest = (PredictionRequest) o;
-    return Objects.equals(this.model, predictionRequest.model) &&
-        Objects.equals(this.features, predictionRequest.features);
+    ModelSignature modelSignature = (ModelSignature) o;
+    return Objects.equals(this.input, modelSignature.input) &&
+        Objects.equals(this.output, modelSignature.output);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(model, features);
+    return Objects.hash(input, output);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PredictionRequest {\n");
-    sb.append("    model: ").append(toIndentedString(model)).append("\n");
-    sb.append("    features: ").append(toIndentedString(features)).append("\n");
+    sb.append("class ModelSignature {\n");
+    sb.append("    input: ").append(toIndentedString(input)).append("\n");
+    sb.append("    output: ").append(toIndentedString(output)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,11 +27,11 @@ import java.io.IOException;
 /**
  * ModelDescriptor
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-02T21:07:58.830357+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-05T17:40:11.794575+02:00[Europe/Paris]")
 public class ModelDescriptor {
-  public static final String SERIALIZED_NAME_PATH = "path";
-  @SerializedName(SERIALIZED_NAME_PATH)
-  private String path;
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
@@ -42,25 +42,25 @@ public class ModelDescriptor {
   private String format;
 
 
-  public ModelDescriptor path(String path) {
+  public ModelDescriptor name(String name) {
     
-    this.path = path;
+    this.name = name;
     return this;
   }
 
    /**
    * Local path of the model
-   * @return path
+   * @return name
   **/
   @ApiModelProperty(required = true, value = "Local path of the model")
 
-  public String getPath() {
-    return path;
+  public String getName() {
+    return name;
   }
 
 
-  public void setPath(String path) {
-    this.path = path;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -117,14 +117,14 @@ public class ModelDescriptor {
       return false;
     }
     ModelDescriptor modelDescriptor = (ModelDescriptor) o;
-    return Objects.equals(this.path, modelDescriptor.path) &&
+    return Objects.equals(this.name, modelDescriptor.name) &&
         Objects.equals(this.version, modelDescriptor.version) &&
         Objects.equals(this.format, modelDescriptor.format);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(path, version, format);
+    return Objects.hash(name, version, format);
   }
 
 
@@ -132,7 +132,7 @@ public class ModelDescriptor {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelDescriptor {\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("}");

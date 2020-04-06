@@ -1,5 +1,6 @@
 numpy
 scipy
+Werkzeug==0.16.1
 Flask
 flask-restplus
 pandas

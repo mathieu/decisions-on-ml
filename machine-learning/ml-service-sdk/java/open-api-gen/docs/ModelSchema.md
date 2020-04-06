@@ -6,7 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**schema** | **String** | Schema of the model | 
+**metadata** | [**ModelMetadata**](ModelMetadata.md) |  |  [optional]
+**signature** | [**ModelSignature**](ModelSignature.md) |  |  [optional]
+**customProperties** | [**ModelMetadata**](ModelMetadata.md) |  |  [optional]
 
 
 

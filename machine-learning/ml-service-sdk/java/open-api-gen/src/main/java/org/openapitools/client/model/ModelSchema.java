@@ -23,36 +23,93 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.ModelMetadata;
+import org.openapitools.client.model.ModelSignature;
 
 /**
  * ModelSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-02T21:07:58.830357+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-05T17:40:11.794575+02:00[Europe/Paris]")
 public class ModelSchema {
-  public static final String SERIALIZED_NAME_SCHEMA = "schema";
-  @SerializedName(SERIALIZED_NAME_SCHEMA)
-  private String schema;
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private ModelMetadata metadata;
+
+  public static final String SERIALIZED_NAME_SIGNATURE = "signature";
+  @SerializedName(SERIALIZED_NAME_SIGNATURE)
+  private ModelSignature signature;
+
+  public static final String SERIALIZED_NAME_CUSTOM_PROPERTIES = "customProperties";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_PROPERTIES)
+  private ModelMetadata customProperties;
 
 
-  public ModelSchema schema(String schema) {
+  public ModelSchema metadata(ModelMetadata metadata) {
     
-    this.schema = schema;
+    this.metadata = metadata;
     return this;
   }
 
    /**
-   * Schema of the model
-   * @return schema
+   * Get metadata
+   * @return metadata
   **/
-  @ApiModelProperty(required = true, value = "Schema of the model")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
-  public String getSchema() {
-    return schema;
+  public ModelMetadata getMetadata() {
+    return metadata;
   }
 
 
-  public void setSchema(String schema) {
-    this.schema = schema;
+  public void setMetadata(ModelMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+
+  public ModelSchema signature(ModelSignature signature) {
+    
+    this.signature = signature;
+    return this;
+  }
+
+   /**
+   * Get signature
+   * @return signature
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ModelSignature getSignature() {
+    return signature;
+  }
+
+
+  public void setSignature(ModelSignature signature) {
+    this.signature = signature;
+  }
+
+
+  public ModelSchema customProperties(ModelMetadata customProperties) {
+    
+    this.customProperties = customProperties;
+    return this;
+  }
+
+   /**
+   * Get customProperties
+   * @return customProperties
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public ModelMetadata getCustomProperties() {
+    return customProperties;
+  }
+
+
+  public void setCustomProperties(ModelMetadata customProperties) {
+    this.customProperties = customProperties;
   }
 
 
@@ -65,12 +122,14 @@ public class ModelSchema {
       return false;
     }
     ModelSchema modelSchema = (ModelSchema) o;
-    return Objects.equals(this.schema, modelSchema.schema);
+    return Objects.equals(this.metadata, modelSchema.metadata) &&
+        Objects.equals(this.signature, modelSchema.signature) &&
+        Objects.equals(this.customProperties, modelSchema.customProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schema);
+    return Objects.hash(metadata, signature, customProperties);
   }
 
 
@@ -78,7 +137,9 @@ public class ModelSchema {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelSchema {\n");
-    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+    sb.append("    customProperties: ").append(toIndentedString(customProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

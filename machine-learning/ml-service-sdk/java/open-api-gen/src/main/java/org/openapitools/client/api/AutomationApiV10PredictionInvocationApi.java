@@ -36,14 +36,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AutomationApiV10PredictionGenericApi {
+public class AutomationApiV10PredictionInvocationApi {
     private ApiClient localVarApiClient;
 
-    public AutomationApiV10PredictionGenericApi() {
+    public AutomationApiV10PredictionInvocationApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public AutomationApiV10PredictionGenericApi(ApiClient apiClient) {
+    public AutomationApiV10PredictionInvocationApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -71,7 +71,7 @@ public class AutomationApiV10PredictionGenericApi {
         Object localVarPostBody = payload;
 
         // create path and map variables
-        String localVarPath = "/automation/api/v1.0/prediction/generic/";
+        String localVarPath = "/automation/api/v1.0/prediction/invocation/";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

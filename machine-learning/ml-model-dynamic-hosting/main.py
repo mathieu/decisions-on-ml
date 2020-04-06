@@ -7,6 +7,7 @@ from flask_restplus import Api, Resource, fields
 from flask_restplus import reqparse
 
 import pandas as pd
+import numpy as np
 from joblib import load
 import pickle
 
@@ -56,17 +57,69 @@ class Model(Resource):
         """Returns the list of ML models."""
         return modelDictionary
 
-
 model_key_descriptor = api.model('ModelKeyDescriptor', {
+    'name': fields.String(required=True, description="Name of the model", help="Name cannot be blank.",
+                          default='iris-svc'),
+    'version': fields.String(required=True, description="Version of the model", help="Name cannot be blank.",
+                             default='1.0'),
+    'format': fields.String(required=True, description="Format of the model", help="Name cannot be blank.",
+                            default='joblib'),
+})
+
+model_metadata = api.model('ModelMetadata', {
     'name': fields.String(required=True, description="Name of the model", help="Name cannot be blank."),
     'version': fields.String(required=True, description="Version of the model", help="Name cannot be blank."),
-    'format': fields.String(required=True, description="Format of the model", help="Name cannot be blank.")
+    'format': fields.String(required=True, description="Format of the model", help="Name cannot be blank."),
+    'author': fields.String(required=True, description="Author of the model", help="Name cannot be blank."),
+    'metrics': fields.Wildcard(fields.String),
+    'customProperties': fields.Wildcard(fields.String)
+})
+
+model_signature_parameter = api.model('ModelSignatureParameter', {
+    'name': fields.String(required=True, description="Name of the model", help="Name cannot be blank."),
+    'order': fields.String(required=True, description="Version of the model", help="Name cannot be blank."),
+    'type': fields.String(required=True, description="Version of the model", help="Name cannot be blank.")
+})
+
+model_signature = api.model('ModelSignature', {
+    'input': fields.List(fields.Raw(required=True, description="Inputs", help="Name cannot be blank.")),
+    'output': fields.List(fields.Raw(required=True, description="Outputs", help="Name cannot be blank."))
 })
 
 model_schema = api.model('ModelSchema', {
-    'schema': fields.String(required=True, description="Schema of the model", help="Name cannot be blank.")
+    'metadata': fields.Nested(model_metadata),
+    'signature': fields.Nested(model_signature),
+    'customProperties': fields.Nested(model_metadata),
 })
 
+address = api.schema_model('Address', {
+    'properties': {
+        'road': {
+            'type': 'string'
+        },
+    },
+    'type': 'object'
+})
+
+person = address = api.schema_model('Person', {
+    'required': ['address'],
+    'properties': {
+        'name': {
+            'type': 'string'
+        },
+        'age': {
+            'type': 'integer'
+        },
+        'birthdate': {
+            'type': 'string',
+            'format': 'date-time'
+        },
+        'address': {
+            '$ref': '#/definitions/Address',
+        }
+    },
+    'type': 'object'
+})
 
 @ns.route('/ModelSchema')
 class ModelSchema(Resource):
@@ -91,21 +144,21 @@ class ModelSchema(Resource):
         # Make a copy and remove the model from it as non serializable into JSON
         model_dictionnary_copy = model_dictionary.copy()
         del model_dictionnary_copy["model"]
-        del model_dictionnary_copy["metadata"]["date"]
+        del model_dictionnary_copy["metadata"]["creationDate"]
 
         return model_dictionnary_copy
 
 
-ns = api.namespace('automation/api/v1.0/prediction/generic', description='run any ML models')
+ns = api.namespace('automation/api/v1.0/prediction/invocation', description='run ML models')
 
-model_descriptor = api.model('ModelDescriptor', {
-    'path': fields.String(required=True, description="Local path of the model", help="Name cannot be blank."),
+request_model_descriptor = api.model('ModelDescriptor', {
+    'name': fields.String(required=True, description="Local path of the model", help="Name cannot be blank."),
     'version': fields.String(required=True, description="Version of the model", help="Name cannot be blank."),
     'format': fields.String(required=True, description="Format of the model", help="Name cannot be blank.")
 })
 
 prediction_request = api.model('PredictionRequest', {
-    'model': fields.Nested(model_descriptor),
+    'model': fields.Nested(request_model_descriptor),
     'features': fields.Wildcard(fields.String)
 })
 
@@ -115,7 +168,6 @@ prediction_response = api.model('PredictionResponse', {
     'id': fields.String(required=True, description="Uuid of the prediction", help="Name cannot be blank."),
     'prediction': fields.String(required=False, description="The prediction", help="Name cannot be blank."),
     'probabilities': fields.Wildcard(fields.String)
-
 })
 
 
@@ -132,7 +184,7 @@ class PredictionService(Resource):
 
             # Model
             jsonModelDictionary = jsonDictionary["model"]
-            modelName = jsonModelDictionary["path"]
+            modelName = jsonModelDictionary["name"]
             modelVersion = jsonModelDictionary["version"]
             modelFormat = jsonModelDictionary["format"]
 
@@ -152,7 +204,8 @@ class PredictionService(Resource):
             metadataDictionary = dictionary["metadata"]
 
             # Introspect the signature
-            signatureParameters = metadataDictionary["signature"]
+            signatureDictionnary = dictionary["signature"]
+            signatureParameters = signatureDictionnary["input"]
             parameterValues = []
             for parameter in signatureParameters:
                 print(parameter)
@@ -166,8 +219,6 @@ class PredictionService(Resource):
 
             # Invocation
             invocationMethod = metadataDictionary["invocation"]
-            predictedClass = -1
-            predictionWrapper = 0
 
             responseDictionary = {
                 "path": modelPath,
@@ -185,15 +236,19 @@ class PredictionService(Resource):
                 predictionWrapper = loaded_model.predict_proba(
                     [parameterValues])
 
-                prediction = predictionWrapper[0]
+                probabilities = predictionWrapper[0]
 
                 # Needs to be generalized
-                probabilities = {
-                    "0": prediction[0],
-                    "1": prediction[1]
+                probability_dictionnary = {
+                    "0": probabilities[0],
+                    "1": probabilities[1]
                 }
 
-                responseDictionary["probabilities"] = probabilities
+                responseDictionary["probabilities"] = probability_dictionnary
+
+                ## Ok for RFC
+                predicted_class = np.where(probabilities == np.amax(probabilities))
+                responseDictionary['prediction'] = str(predicted_class[0][0])
 
             # json_string = json.dumps(responseDictionary, indent=4)
 

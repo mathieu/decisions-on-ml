@@ -21,41 +21,66 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.ModelMetadata;
-import org.openapitools.client.model.ModelSignature;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for ModelSchema
+ * Model tests for ModelMetadata
  */
-public class ModelSchemaTest {
-    private final ModelSchema model = new ModelSchema();
+public class ModelMetadataTest {
+    private final ModelMetadata model = new ModelMetadata();
 
     /**
-     * Model tests for ModelSchema
+     * Model tests for ModelMetadata
      */
     @Test
-    public void testModelSchema() {
-        // TODO: test ModelSchema
+    public void testModelMetadata() {
+        // TODO: test ModelMetadata
     }
 
     /**
-     * Test the property 'metadata'
+     * Test the property 'name'
      */
     @Test
-    public void metadataTest() {
-        // TODO: test metadata
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'signature'
+     * Test the property 'version'
      */
     @Test
-    public void signatureTest() {
-        // TODO: test signature
+    public void versionTest() {
+        // TODO: test version
+    }
+
+    /**
+     * Test the property 'format'
+     */
+    @Test
+    public void formatTest() {
+        // TODO: test format
+    }
+
+    /**
+     * Test the property 'author'
+     */
+    @Test
+    public void authorTest() {
+        // TODO: test author
+    }
+
+    /**
+     * Test the property 'metrics'
+     */
+    @Test
+    public void metricsTest() {
+        // TODO: test metrics
     }
 
     /**

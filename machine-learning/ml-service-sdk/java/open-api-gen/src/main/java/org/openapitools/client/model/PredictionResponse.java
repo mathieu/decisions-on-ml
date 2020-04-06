@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * PredictionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-02T21:07:58.830357+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-05T17:40:11.794575+02:00[Europe/Paris]")
 public class PredictionResponse {
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
@@ -103,7 +103,8 @@ public class PredictionResponse {
    * The prediction
    * @return prediction
   **/
-  @ApiModelProperty(required = true, value = "The prediction")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The prediction")
 
   public String getPrediction() {
     return prediction;

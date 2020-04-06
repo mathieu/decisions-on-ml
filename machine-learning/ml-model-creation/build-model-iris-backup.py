@@ -82,22 +82,12 @@ toBePersisted = dict({
                 'type': 'float'
             }
         ],
-        'output': [
-            {
-                'name': 'prediction',
-                'order': 0,
-                'type': '[float]'
-            },
-            {
-                'name': 'probabilities',
-                'order': 1,
-                'type': '[float]'
-            },
-        ]
+        'output': {
+            'probabilities': '[float]',
+            'prediction': 'Iris Setosa, Iris Versicolour, Iris Virginica'
+        }
     }
 })
-
-## 'prediction': 'Iris Setosa, Iris Versicolour, Iris Virginica'
 
 modelFilePath = 'models/iris-svc.joblib'
 from joblib import dump

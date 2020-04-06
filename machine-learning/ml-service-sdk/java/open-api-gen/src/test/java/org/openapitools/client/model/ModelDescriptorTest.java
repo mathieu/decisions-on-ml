@@ -41,11 +41,11 @@ public class ModelDescriptorTest {
     }
 
     /**
-     * Test the property 'path'
+     * Test the property 'name'
      */
     @Test
-    public void pathTest() {
-        // TODO: test path
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**

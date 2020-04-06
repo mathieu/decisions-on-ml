@@ -25,12 +25,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for AutomationApiV10PredictionGenericApi
+ * API tests for AutomationApiV10PredictionInvocationApi
  */
 @Ignore
-public class AutomationApiV10PredictionGenericApiTest {
+public class AutomationApiV10PredictionInvocationApiTest {
 
-    private final AutomationApiV10PredictionGenericApi api = new AutomationApiV10PredictionGenericApi();
+    private final AutomationApiV10PredictionInvocationApi api = new AutomationApiV10PredictionInvocationApi();
 
     
     /**

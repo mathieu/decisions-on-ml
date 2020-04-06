@@ -82,13 +82,20 @@ toBePersisted = dict({
     'model': model,
     'metadata': {
         'name': 'loan payment default classification',
+        'version':'1.0',
+        'serialization':'joblib',
+        'algorithm':'svc',
+        'category': 'classification',
         'author': 'Pierre Feillet',
-        'date': d,
+        'creationDate': d,
         'metrics': {
             'accuracy': accuracy
         },
         'invocation': 'predict_proba',
-        'signature': [
+        'customProperties': []
+    },
+    'signature': {
+        'input': [
             {
                 'name': "creditScore",
                 'order': 0,
@@ -119,12 +126,20 @@ toBePersisted = dict({
                 'order': 5,
                 'type': 'float'
             }
+        ],
+        'output': [
+            {
+                'name': 'prediction',
+                'order': 0,
+                'type': 'float'
+            },
+            {
+                'name': 'probabilities',
+                'order': 1,
+                'type': '[float]'
+            }
         ]
-    },
-    'outcome': {
-        'probabilities': '[float]',
-        'prediction': 'float'
-    },
+    }
 })
 
 modelFilePath = 'models/miniloandefault-rfc.joblib'
