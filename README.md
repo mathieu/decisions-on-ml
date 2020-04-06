@@ -1,4 +1,4 @@
-# Decision automation on machine learning
+# Hosting ML models through micro-services
 
 This repository includes sample material to show how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
