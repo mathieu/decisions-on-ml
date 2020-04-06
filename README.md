@@ -10,11 +10,6 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  
  ![Flow](docs/images/ml-microservice-coo.png "ML microservice stack")
 
-Material aims at tackling 3 challenges:
-- how to host ML models in a simple and portable form factor,
-- how to provide SDKs to easily consume ML driven predictions from remote applications,
-- with the benefit of such SDK and ML micro service how to combine business rules and predictions in a decision service project.
-
 The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
 - Docker, as a container standard, used here to easily build and deploy a Python environment,
 - Python, the de facto prefered language for ML,
