@@ -23,7 +23,7 @@ The technologies selected here to fullfill a lightweight machine learning predic
 - JobLib, another object serialization for Python.
 
 This repository is composed of 2 main parts:
-- machine-learning ![machine-learning](machine-learning/README.md "ML hosting")
+- ![machine-learning](machine-learning/README.md)
    - ml hosting with microservices
    - sdk to remotely get a prediction from the microservice and manage the ML models
 - decision service projects
