@@ -17,6 +17,7 @@ Same style of invocation for the classic Iris predictive model.
  
 ## Build the ML microservice
 ```console
+cd ml-service/ml-model-dynamic-hosting
 docker build . -t ml-microservice  -f ./Dockerfile
 ```
 ## Run the ML microservice
