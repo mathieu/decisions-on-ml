@@ -1,7 +1,11 @@
-# Decision automation on machine learning
+# Hosting ML models through a micro-service architecture
 
-This repository includes sample material to show how IBM Decision Services can leverage ML predictive models hosted as micro services.
-
+The technical proposal fits with a concept of operations based on 3 main roles and 4 steps:
+ - Step 1: A Data scientist elaborates an ML model in a data science tool.
+ - Step 2: A Data scientist exports an ML model serialized in pickle of joblib.
+ - Step 3: A developer takes the serialized ML model and hosts it as a microservice
+ - Step 4: A Business user creates a decision service in IBM Digital Business Automation that invokes the hosted ML model
+ 
 The machine-learning section of the repository is composed of 2 main parts:
    - ml hosting with microservices
    - sdk to remotely get a prediction from the microservice and manage the ML models
