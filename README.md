@@ -20,5 +20,5 @@ The approaches combines Python for ML, Docker and OpenAPI.
 This repository is composed of 3 main parts:
 - [ML microservice](ml-service/README.md): a micro service architecture to host ML models as REST APIs in a Docker container.
 - [ML microservice sdk](ml-service-sdk/README.md): a sdk to remotely get a prediction from the microservice and manage the ML models.
-- [decision services](decision-services/README.md): project samples leveraging rules and ml to automate decisioning
+- [Decision services](decision-services/README.md): project samples leveraging rules and ml to automate decisioning
    - miniloan project that leverages business rules the micro ml sdk to automate the processing of loan applications.
