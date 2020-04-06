@@ -59,7 +59,6 @@ Execute to retrieve the ML schema.
 ![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-3.png "Schema response")
 
 Open the predictive method and fill the input parameters in the UI to execute the REST endpoint.
-![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-predict-1.png "Prediction inputs")
 
 ```console
 {
@@ -78,6 +77,7 @@ Open the predictive method and fill the input parameters in the UI to execute th
   }
 }
 ```
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-predict-1.png "Prediction inputs")
 
 After hitting the execute button you then gets the following screen.
 ![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-predict-2.png "Prediction results")
