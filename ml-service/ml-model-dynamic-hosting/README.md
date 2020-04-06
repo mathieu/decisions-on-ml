@@ -41,7 +41,7 @@ http://127.0.0.1:3000/
 ```
 
 You should see a SwaggerUI layout listing the exposed REST methods.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-ui-1.png "OpenAPI menu")
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-1.png "OpenAPI menu")
 
 You can query an ML model that is predeployed in the microservice.
 Open the following method and enter this payload to designated a loan repayment default scoring model. 
