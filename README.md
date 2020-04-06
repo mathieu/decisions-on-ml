@@ -13,18 +13,12 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  - Step 3: A developer takes the serialized ML model and hosts it as a microservice
  - Step 4: A Business user creates a decision service in IBM Digital Business Automation that invokes the hosted ML model
  
- <img src="docs/images/e2e-decision-management.png" alt="e2e-decision-management.png" width="600" height="500">
+ <img src="docs/images/e2e-decision-management.png" alt="e2e-decision-management.png" width="600" height="450">
 
-The technologies selected here to fullfill a lightweight machine learning predictive model hosting are:
-- Docker, as a container standard, used here to easily build and deploy a Python environment,
-- Python, the de facto prefered language for ML,
-- Flask and Flask-RESTPlus, frameworks bringing web app and RESTfull APIs,
-- Pickle, an object serialization for Python,
-- JobLib, another object serialization for Python.
+The approaches combines Python for ML, Docker and OpenAPI.
 
-This repository is composed of 2 main parts:
-- [machine-learning](machine-learning/README.md)
-   - ml hosting with microservices
-   - sdk to remotely get a prediction from the microservice and manage the ML models
-- [decision service projects](decision-service-projects/README.md)
+This repository is composed of 3 main parts:
+- [machine-learning micro-service](ml-service/README.md) : a micro service architecture to host ML models as REST APIs in a Docker container.
+- [machine-learning micro-service sdk](ml-service-sdk/README.md): a sdk to remotely get a prediction from the microservice and manage the ML models.
+- [decision services](decision-services/README.md): project samples leveraging rules and ml to automate decisioning
    - miniloan project that leverages business rules the micro ml sdk to automate the processing of loan applications.
