@@ -1,4 +1,4 @@
-# Decision automation on machine learning
+# Decision automation with machine learning
 
 This repository demonstrates how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
