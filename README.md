@@ -14,8 +14,8 @@ The technologies selected here to fullfill a lightweight machine learning predic
 - Docker, as a container standard, used here to easily build and deploy a Python environment,
 - Python, the de facto prefered language for ML,
 - Flask and Flask-RESTPlus, frameworks bringing web app and RESTfull APIs,
-- Pickle, a serialization for Python,
-- JobLib, another serialization for Python.
+- Pickle, an object serialization for Python,
+- JobLib, another object serialization for Python.
 
 
 This repository is composed of 3 projects:
