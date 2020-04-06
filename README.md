@@ -17,6 +17,12 @@ The technologies selected here to fullfill a lightweight machine learning predic
 - Pickle, an object serialization for Python,
 - JobLib, another object serialization for Python.
 
+This repository is composed of 2 main parts:
+- machine-learning
+   - ml hosting with microservices
+   - sdk to remotely get a prediction from the microservice and manage the ML models
+- decision service projects
+   - miniloan project that leverages business rules the micro ml sdk to automate the processing of loan applications.
 
 This repository is composed of 3 projects:
 - [ML model creation](ml-model-creation/README.md): Several source files to create variations of ML models with scikit-learn to predict a default for a loan repayment. These models are stored in the file system through a pickle serialization or JobLib serialization.
