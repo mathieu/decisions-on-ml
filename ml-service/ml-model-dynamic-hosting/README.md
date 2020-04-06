@@ -41,7 +41,7 @@ http://127.0.0.1:3000/
 ```
 
 You should see a SwaggerUI layout listing the exposed REST methods.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-ui-1.png "OpenAPI menu")
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-1.png "OpenAPI menu")
 
 You can query an ML model that is predeployed in the microservice.
 Open the following method and enter this payload to designated a loan repayment default scoring model. 
@@ -52,17 +52,35 @@ Open the following method and enter this payload to designated a loan repayment 
    "format": "joblib"
 }
 ```
-Open the predictive method and fill the input parameters in the UI to execute the REST endpoint.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-ui-2.png "Prediction inputs")
+
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-2.png "Schema request")
+
+Execute to retrieve the ML schema.
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-3.png "Schema response")
 
 Open the predictive method and fill the input parameters in the UI to execute the REST endpoint.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-ui-3.png "Prediction inputs")
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-predict-1.png "Prediction inputs")
 
-Open the predictive method and fill the input parameters in the UI to execute the REST endpoint.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-ui-2.png "Prediction inputs")
+```console
+{
+  "model": {
+    "name": "miniloandefault-rfc",
+    "version": "1.0",
+    "format": "joblib"
+  },
+  "features": {
+    "creditScore": "5.1",
+    "income": "3.5",
+    "loanAmount": "2.4",
+    "monthDuration": "0.2",
+    "rate" : "0.07",
+    "yearlyReimbursement" : "10000.0"
+  }
+}
+```
 
 After hitting the execute button you then gets the following screen.
-![Flow](../../docs/images/ml-model-dynamic-hosting-openapi-screen-3.png "Prediction results")
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-predict-2.png "Prediction results")
 
 Congratulations! You obtained a risk score computed by the scikit-learn ML model.
 In the JSON response you see the probability of a payment default.
@@ -99,6 +117,3 @@ You have experimented a lightweight approach to host multiple scikit-learn ML mo
 The Docker image includes the ML models prepared by a data scientist and shared as Joblib files.
 
 Next step will consist in consuming the predictive REST method from an IBM Automation engine running your business logic.
-
- 
-
