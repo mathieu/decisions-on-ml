@@ -13,7 +13,7 @@ Input parameters describing the loan are passed in JSON as the prediction return
 Same style of invocation for the classic Iris predictive model.
 
 
- ![Flow](../docs/images/ml-model-joblib-microservice-architecture.png "ML microservice stack")
+ ![Flow](../../docs/images/ml-model-joblib-microservice-architecture.png "ML microservice stack")
  
 ## Build the ML microservice
 ```console
@@ -41,7 +41,7 @@ http://127.0.0.1:3000/
 ```
 
 You should see a SwaggerUI layout listing the exposed REST methods.
-![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-1.png "OpenAPI menu")
+![Flow](../../docs/images/ml-model-dynamic-hosting-open-api-ui-1.png "OpenAPI UI")
 
 You can query an ML model that is predeployed in the microservice.
 Open the following method and enter this payload to designated a loan repayment default scoring model. 
@@ -86,7 +86,7 @@ Congratulations! You obtained a risk score computed by the scikit-learn ML model
 In the JSON response you see the probability of a payment default.
 
 You can conduct other tests in the OpenAPI window, OpenAPI generated clients or through a curl command.
-You can test another ML model served by the same REST method with the following payload. We are now invoking a Support Verctor Machine model to classify Iris, a classic sample dataset.
+You can test another ML model served by the same REST method with the following payload. We are now invoking a Support Vector Machine model to classify Iris, a classic sample dataset.
 
 ```console
 {
