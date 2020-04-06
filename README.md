@@ -26,5 +26,5 @@ This repository is composed of 2 main parts:
 - [machine-learning](machine-learning/README.md)
    - ml hosting with microservices
    - sdk to remotely get a prediction from the microservice and manage the ML models
-- decision service projects
+- [decision service projects](decision-service-projects/README.md)
    - miniloan project that leverages business rules the micro ml sdk to automate the processing of loan applications.
