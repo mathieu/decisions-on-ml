@@ -6,6 +6,8 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  - Step 3: A developer takes the serialized ML model and hosts it as a microservice
  - Step 4: A Business user creates a decision service in IBM Digital Business Automation that invokes the hosted ML model
  
+ ![Flow](docs/images/ml-microservice-coo.png "ML microservice stack")
+  
 The machine-learning section of the repository is composed of 2 main parts:
    - ml hosting with microservices
    - sdk to remotely get a prediction from the microservice and manage the ML models
