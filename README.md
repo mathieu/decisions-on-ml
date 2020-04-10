@@ -1,8 +1,11 @@
-# Decision automation with machine learning
 [![Build Status](https://travis-ci.org/ODMDev/decisions-on-ml.svg?branch=master)
-[![GitHub release](https://img.shields.io/github/release/ODMDev/odm-ondocker.svg)](https://github.com/ODMDev/odm-ondocker/releases)
+[![GitHub release](https://img.shields.io/github/release/ODMDev/decisions-on-ml.svg)
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ODMDev/odm-ondocker/dev.svg)](https://github.com/ODMDev/odm-ondocker)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
+# Decision automation with machine learning
+
 This repository demonstrates how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
 Material aims at tackling 3 challenges:
