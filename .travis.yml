@@ -10,7 +10,6 @@ os:
 before_install:
 - mkdir -p $HOME/.cache
 - docker --version
-- docker-compose version
 script:
 - chmod +x build.sh
 - "./scripts/build.sh"

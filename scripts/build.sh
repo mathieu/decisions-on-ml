@@ -2,7 +2,7 @@
 set -e
 echo "start building odm-ml..."
 echo "current build directory:"
-cd $HOME
+
 ls -la
 
 
