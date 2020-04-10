@@ -37,7 +37,7 @@ print("Accuracy:", accuracy)
 
 # Unit test
 prediction = model.predict_proba([[397, 160982, 570189, 240, 0.07, 57195]])  # expected 1 meaning default
-print("prediction with Random Forest Classifier: " + str(prediction) + " expect [1]")
+print("prediction with Random Forest Classifier: " + str(prediction) + " expect [0]")
 
 prediction = model.predict_proba([[580, 66037, 168781, 120, 0.09, 16187]])  # expected 0
 print("prediction with Random Forest Classifier: " + str(prediction) + " expect [0]")
@@ -73,7 +73,7 @@ pickle.dump(model, open(modelFilePath, 'wb'))
 #Testing deserialized model
 loaded_model = pickle.load(open(modelFilePath, 'rb'))
 prediction = loaded_model.predict([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
-print("prediction with serialized SVM: " + str(prediction) + " expect [0]")
+print("prediction with serialized model: " + str(prediction) + " expect [0]")
 
 
 d = datetime.datetime.today()
@@ -147,11 +147,11 @@ from joblib import dump
 
 dump(toBePersisted, modelFilePath)
 
-# Testing deserialized model
+# Testing deserialized model with joblib
 
 from joblib import load
 
 dictionary = load(modelFilePath)
 loaded_model = dictionary['model']
 prediction = loaded_model.predict_proba([[creditScore, income, loanAmount, monthDuration, rate, yearlyReimbursement]])
-print("prediction with serialized Random Forest Classifier: " + str(prediction) + " expect [1]")
+print("prediction with serialized Random Forest Classifier: " + str(prediction) + " expect [0]")
