@@ -11,10 +11,11 @@ before_install:
 - mkdir -p $HOME/.cache
 - docker --version
 script:
-- chmod +x ./scripts/build.sh ./scripts/test.sh
 - "./scripts/build.sh"
-- docker run  -d  dynamic-ml-microservice  -p 5000:5000
-#- docker run  -d  static-ml-microservice  -p 4000:5000
+# Starting ML Service.
+- echo "Starting Dynamic ML Service"
+- docker run -d -p 5000:5000 dynamic-ml-microservice
+#- docker run -d -p 4000:5000 dynamic-ml-microservice
 - "./scripts/suite.sh"
 #notifications:
 #  slack:
