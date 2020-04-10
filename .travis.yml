@@ -11,7 +11,7 @@ before_install:
 - mkdir -p $HOME/.cache
 - docker --version
 script:
-- chmod +x build.sh
+- chmod +x ./scripts/build.sh
 - "./scripts/build.sh"
 #- "./scripts/suite.sh"
 #notifications:

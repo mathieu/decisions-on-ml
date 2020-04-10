@@ -7,10 +7,9 @@ ls -la
 
 
 echo "Building static apps..."
-cd $HOME
+cd ..
 cd decision-on-ml/ml-service/ml-model-static-hosting
 docker build . -t static-ml-microservice  -f ./Dockerfile --no-cache
 echo "Building dynamic apps..."
-cd $HOME
 cd decision-on-ml/ml-service/ml-model-dynamic-hosting
 docker build . -t dynamic-ml-microservice  -f ./Dockerfile --no-cache
