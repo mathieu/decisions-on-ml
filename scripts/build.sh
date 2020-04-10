@@ -5,8 +5,8 @@ echo "current build directory:"
 pwd
 
 echo "Building static apps..."
-cd ml-service/ml-model-static-hosting
-docker build . -t static-ml-microservice  -f ./Dockerfile --no-cache
+#cd ml-service/ml-model-static-hosting
+#docker build . -t static-ml-microservice  -f ./Dockerfile --no-cache
 echo "Building dynamic apps..."
 cd ../../
 cd ml-service/ml-model-dynamic-hosting
