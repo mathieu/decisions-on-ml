@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/ODMDev/decisions-on-ml.svg?branch=master)](https://travis-ci.org/ODMDev/decisions-on-ml.svg?branch=master)
+[![GitHub release](https://img.shields.io/github/release/ODMDev/decisions-on-ml.svg)](https://img.shields.io/github/release/ODMDev/decisions-on-ml.svg)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
 # Decision automation with machine learning
 
 This repository demonstrates how IBM Decision Services can leverage ML predictive models hosted as micro services.
@@ -12,7 +17,7 @@ The technical proposal fits with a concept of operations based on 3 main roles a
  - Step 2: A Data scientist exports an ML model serialized in pickle or joblib.
  - Step 3: A developer takes the serialized ML model and hosts it as a microservice
  - Step 4: A Business user creates a decision service in IBM Digital Business Automation that invokes the hosted ML model
- 
+
  <img src="docs/images/e2e-decision-management.png" alt="e2e-decision-management.png" width="600" height="500">
 
 The approaches combines Python for ML, Docker and OpenAPI.
