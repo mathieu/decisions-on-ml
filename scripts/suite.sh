@@ -30,7 +30,7 @@ wait_for_url () {
 
 
 # For Dynamic hosting.
-wait_for_url http://localhost:5000/automation/api/v1.0/prediction/admin/isAlive
+wait_for_url http://localhost:5000/automation/api/v1.0/prediction/admin/is-alive
 #wait_for_url http://localhost:4000/
 
 exit $ret
