@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * PredictionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-05T17:40:11.794575+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-12T16:52:07.017866+02:00[Europe/Paris]")
 public class PredictionResponse {
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)

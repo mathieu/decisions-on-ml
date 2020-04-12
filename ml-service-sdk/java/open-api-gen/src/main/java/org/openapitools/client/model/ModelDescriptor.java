@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ModelDescriptor
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-05T17:40:11.794575+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-12T16:52:07.017866+02:00[Europe/Paris]")
 public class ModelDescriptor {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

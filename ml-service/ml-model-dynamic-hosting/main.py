@@ -27,6 +27,9 @@ modelDictionary = dict({
             'path': "models/miniloandefault-svm.joblib",
         },
         {
+            'path': "models/miniloandefault-xgb-c.joblib",
+        },
+        {
             'path': "models/iris-svc.joblib",
         }
     ]
@@ -45,9 +48,10 @@ api = Api(app)
 ns = api.namespace('automation/api/v1.0/prediction/admin', description='administration')
 
 
-@ns.route('/isAlive')  # Create a URL route to this resource
+@ns.route('/is-alive')  # Create a URL route to this resource
 class HeartBeat(Resource):  # Create a RESTful resource
     def get(self):  # Create GET endpoint
+        """Returns an heart beat."""
         return {'answer': 'ok'}
 
 
@@ -92,36 +96,7 @@ model_schema = api.model('ModelSchema', {
     'customProperties': fields.Nested(model_metadata),
 })
 
-address = api.schema_model('Address', {
-    'properties': {
-        'road': {
-            'type': 'string'
-        },
-    },
-    'type': 'object'
-})
-
-person = address = api.schema_model('Person', {
-    'required': ['address'],
-    'properties': {
-        'name': {
-            'type': 'string'
-        },
-        'age': {
-            'type': 'integer'
-        },
-        'birthdate': {
-            'type': 'string',
-            'format': 'date-time'
-        },
-        'address': {
-            '$ref': '#/definitions/Address',
-        }
-    },
-    'type': 'object'
-})
-
-@ns.route('/ModelSchema')
+@ns.route('/model-schema')
 class ModelSchema(Resource):
     @api.expect(model_key_descriptor)
     @api.response(202, 'ML Schema retrieved.', model_schema)
@@ -179,64 +154,64 @@ class PredictionService(Resource):
         """Computes a new prediction."""
 
         try:
-            jsonDictionary = request.json
-            print(jsonDictionary)
+            json_dictionary = request.json
+            print(json_dictionary)
 
             # Model
-            jsonModelDictionary = jsonDictionary["model"]
-            modelName = jsonModelDictionary["name"]
-            modelVersion = jsonModelDictionary["version"]
-            modelFormat = jsonModelDictionary["format"]
+            json_model_dictionary = json_dictionary["model"]
+            model_name = json_model_dictionary["name"]
+            model_version = json_model_dictionary["version"]
+            model_format = json_model_dictionary["format"]
 
             # Features
-            jsonPayloadDictionary = jsonDictionary["features"]
+            json_payload_dictionary = json_dictionary["features"]
 
             # Compose the model path
-            modelPath = 'models/' + modelName + '.' + 'joblib'  # Picking joblib file by default
+            model_path = 'models/' + model_name + '.' + 'joblib'  # Picking joblib file by default
 
             # Remote read
             # response = requests.get('https://github.com/ODMDev/decisions-on-ml/blob/master/docker-python-flask-sklearn-joblist-json/models/miniloandefault-rfc.joblib?raw=true')
 
             # Local read
-            dictionary = load(modelPath)
+            dictionary = load(model_path)
 
             # Access to the model metadata
-            metadataDictionary = dictionary["metadata"]
+            metadata_dictionary = dictionary["metadata"]
 
             # Introspect the signature
-            signatureDictionnary = dictionary["signature"]
-            signatureParameters = signatureDictionnary["input"]
-            parameterValues = []
-            for parameter in signatureParameters:
+            signature_dictionnary = dictionary["signature"]
+            signature_parameters = signature_dictionnary["input"]
+            parameter_values = []
+            for parameter in signature_parameters:
                 print(parameter)
                 name = parameter["name"]
                 type = parameter["type"]
-                value = float(jsonPayloadDictionary[name])
-                parameterValues.append(value)
+                value = float(json_payload_dictionary[name])
+                parameter_values.append(value)
 
             # Local read
             loaded_model = dictionary['model']
 
             # Invocation
-            invocationMethod = metadataDictionary["invocation"]
+            invocation_method = metadata_dictionary["invocation"]
 
-            responseDictionary = {
-                "path": modelPath,
+            response_dictionary = {
+                "path": model_path,
                 "id": str(uuid.uuid4())
             }
 
-            if invocationMethod == 'predict':
-                predictedClass = loaded_model.predict(
-                    [parameterValues])
+            if invocation_method == 'predict':
+                predicted_class = loaded_model.predict(
+                    [parameter_values])
                 # Assume an array of a single element to be cast in int
-                foundClass = predictedClass[0]
-                responseDictionary['prediction'] = foundClass.item()  # cast into int
+                found_class = predicted_class[0]
+                response_dictionary['prediction'] = found_class.item()  # cast into int
 
-            if invocationMethod == 'predict_proba':
-                predictionWrapper = loaded_model.predict_proba(
-                    [parameterValues])
+            if invocation_method == 'predict_proba':
+                prediction_wrapper = loaded_model.predict_proba(
+                    [parameter_values])
 
-                probabilities = predictionWrapper[0]
+                probabilities = prediction_wrapper[0]
 
                 # Needs to be generalized
                 probability_dictionnary = {
@@ -244,17 +219,17 @@ class PredictionService(Resource):
                     "1": probabilities[1]
                 }
 
-                responseDictionary["probabilities"] = probability_dictionnary
+                response_dictionary["probabilities"] = probability_dictionnary
 
                 ## Ok for RFC
                 predicted_class = np.where(probabilities == np.amax(probabilities))
-                responseDictionary['prediction'] = str(predicted_class[0][0])
+                response_dictionary['prediction'] = str(predicted_class[0][0])
 
             # json_string = json.dumps(responseDictionary, indent=4)
 
-            print(responseDictionary)
+            print(response_dictionary)
 
-            return responseDictionary
+            return response_dictionary
 
         except:
             return "KO"

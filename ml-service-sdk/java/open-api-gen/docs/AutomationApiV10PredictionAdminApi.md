@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getHeartBeat**](AutomationApiV10PredictionAdminApi.md#getHeartBeat) | **GET** /automation/api/v1.0/prediction/admin/isAlive | 
+[**getHeartBeat**](AutomationApiV10PredictionAdminApi.md#getHeartBeat) | **GET** /automation/api/v1.0/prediction/admin/is-alive | Returns an heart beat
 [**getModel**](AutomationApiV10PredictionAdminApi.md#getModel) | **GET** /automation/api/v1.0/prediction/admin/models | Returns the list of ML models
-[**postModelSchema**](AutomationApiV10PredictionAdminApi.md#postModelSchema) | **POST** /automation/api/v1.0/prediction/admin/ModelSchema | Returns the schema of a model
+[**postModelSchema**](AutomationApiV10PredictionAdminApi.md#postModelSchema) | **POST** /automation/api/v1.0/prediction/admin/model-schema | Returns the schema of a model
 
 
 <a name="getHeartBeat"></a>
 # **getHeartBeat**
 > getHeartBeat()
 
-
+Returns an heart beat
 
 ### Example
 ```java

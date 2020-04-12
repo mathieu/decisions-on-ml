@@ -70,7 +70,7 @@ public class AutomationApiV10PredictionAdminApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/automation/api/v1.0/prediction/admin/isAlive";
+        String localVarPath = "/automation/api/v1.0/prediction/admin/is-alive";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -105,7 +105,7 @@ public class AutomationApiV10PredictionAdminApi {
     }
 
     /**
-     * 
+     * Returns an heart beat
      * 
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -119,7 +119,7 @@ public class AutomationApiV10PredictionAdminApi {
     }
 
     /**
-     * 
+     * Returns an heart beat
      * 
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -135,7 +135,7 @@ public class AutomationApiV10PredictionAdminApi {
     }
 
     /**
-     *  (asynchronously)
+     * Returns an heart beat (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -265,7 +265,7 @@ public class AutomationApiV10PredictionAdminApi {
         Object localVarPostBody = payload;
 
         // create path and map variables
-        String localVarPath = "/automation/api/v1.0/prediction/admin/ModelSchema";
+        String localVarPath = "/automation/api/v1.0/prediction/admin/model-schema";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
