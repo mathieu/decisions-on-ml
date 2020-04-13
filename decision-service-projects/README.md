@@ -1,7 +1,7 @@
 # Decision Service projects with ML
 
 
- ![Flow](docs/images/decision-service-with-ml.png "Decision Service with ML microservice stacks")
+ ![Flow](../docs/images/decision-service-with-ml.png "Decision Service with ML microservice stacks")
 
 This repository is composed of 2 main parts:
 - machine-learning
