@@ -29,10 +29,10 @@ public class PredictiveService {
 	/**
 	 * @return The risk score of having a repayment default for the application
 	 */
-	public static double GetRepaymentDefaultRiskScore(Borrower borrower, Loan loan) {
+	public static double GetRepaymentDefaultRiskScore(Borrower borrower, Loan loan, PredictiveServiceConfiguration configuration) {
 
 		//Constant to be moved
-		MLServiceClient mlServiceClient = new MLServiceClient("http://localhost:5000");
+		MLServiceClient mlServiceClient = new MLServiceClient(configuration.getUrl());
 		
 		// ModelSchema
 		//

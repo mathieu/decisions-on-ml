@@ -27,4 +27,9 @@ miniloan.Loan.yearlyRepayment#phrase.navigation = {yearly repayment} of {this}
 
 # risk.PredictiveService
 risk.PredictiveService#concept.label = predictive service
-risk.PredictiveService.GetRepaymentDefaultRiskScore(miniloan.Borrower,miniloan.Loan)#phrase.navigation = predict repayment risk score for {0}, {1}
+risk.PredictiveService.GetRepaymentDefaultRiskScore(miniloan.Borrower,miniloan.Loan,risk.PredictiveServiceConfiguration)#phrase.navigation = predict repayment risk score for {0}, {1}, {2}
+
+# risk.PredictiveServiceConfiguration
+risk.PredictiveServiceConfiguration#concept.label = predictive service configuration
+risk.PredictiveServiceConfiguration.url#phrase.action = set the url of {this} to {url}
+risk.PredictiveServiceConfiguration.url#phrase.navigation = {url} of {this}

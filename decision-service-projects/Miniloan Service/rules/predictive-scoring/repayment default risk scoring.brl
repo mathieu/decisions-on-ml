@@ -4,7 +4,7 @@
   <uuid>8a35c5e6-bfd4-4414-88f0-3b052211be73</uuid>
   <locale>en_US</locale>
   <definition><![CDATA[definitions
-set repaymentDefaultRisk to predict repayment risk score for 'the borrower' , 'the loan' ;
+set repaymentDefaultRisk to predict repayment risk score for 'the borrower' , 'the loan', 'the predictive service configuration' ;
 set riskMessage to "the repayment default risk is predicted as " + repaymentDefaultRisk;
 if 
    repaymentDefaultRisk is more than 0.10

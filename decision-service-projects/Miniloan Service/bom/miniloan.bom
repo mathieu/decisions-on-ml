@@ -42,6 +42,14 @@ package risk;
 public class PredictiveService
         property automaticVariable "true"
 {
-    public static double GetRepaymentDefaultRiskScore(miniloan.Borrower arg1, miniloan.Loan arg2);
+    public PredictiveService();
+    public static double GetRepaymentDefaultRiskScore(miniloan.Borrower arg1, miniloan.Loan arg2, risk.PredictiveServiceConfiguration arg3);
+}
+
+public class PredictiveServiceConfiguration
+{
+    public string url;
+    public PredictiveServiceConfiguration(string arg);
+    public PredictiveServiceConfiguration();
 }
 
