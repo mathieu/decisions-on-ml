@@ -10,3 +10,7 @@ Decision services coming with IBM Digital Business Automation are able to consum
 
 
 The decision service projects folder includes a miniloan project that leverages business rules the micro ml sdk to automate the processing of loan applications.
+
+The ready to use assets are:
+- the RuleApp archive. This archive contains all you need to execute the rules and delegate a remote call to the micro ML service.
+- The Decision Service project. It is the set of files as you can have it on your file system to import an Eclipse project for Rule Designer 8.10.3 or later.
