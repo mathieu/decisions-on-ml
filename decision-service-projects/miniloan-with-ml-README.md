@@ -9,7 +9,7 @@ Decision services coming with IBM Digital Business Automation are able to consum
 
 <img src="../docs/images/miniloan-with-ml-rule-explorer.png" alt="Decision Service project in the Rule Explorer" width="300" height="400">
 
-![Ruleflow calling the prediction](../docs/images/miniloan-with-ml-ruleflow.png "A ruleflow with a task that cares about the ML estimated risk management")
+<img src="../docs/images/miniloan-with-ml-ruleflow.png" alt="A ruleflow with a task that cares about the ML estimated risk management" width="300" height="400">
 
 ![Rule calling the prediction](../docs/images/rule-with-ml.png "A rule calling a prediction of a repayment loan default")
  
