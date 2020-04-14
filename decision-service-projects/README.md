@@ -9,7 +9,7 @@ Decision services coming with IBM Digital Business Automation are able to consum
  ![Flow](../docs/images/decision-service-with-ml-stacks.png "Decision Service with ML microservice stacks")
 
 
-The decision service projects folder includes a miniloan project that leverages business rules the micro ml sdk to automate the processing of loan applications.
+The decision service projects folder includes a ![miniloan with ml](./minilian-with-ml-README.md "miniloan with ml") project that leverages business rules the micro ml sdk to automate the processing of loan applications.
 
 The ready to use assets are:
 - the RuleApp archive. This archive contains all you need to execute the rules and delegate a remote call to the micro ML service.
