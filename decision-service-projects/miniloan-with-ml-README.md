@@ -11,7 +11,7 @@ Decision services coming with IBM Digital Business Automation are able to consum
 
 ![Rule calling the prediction](../docs/images/rule-with-ml.png "A rule calling a prediction of a repayment loan default")
  
-![Ruleflow calling the prediction](../docs/images/miniloan-ruleflow-with-ml.png "A ruleflow with a task that cares about the ML estimated risk management")
+![Ruleflow calling the prediction](../docs/images/miniloan-with-ml-ruleflow.png "A ruleflow with a task that cares about the ML estimated risk management")
   
 ![Rule project](../docs/images/rule-with-ml.png "A rule calling a prediction of a repayment loan default")
 
