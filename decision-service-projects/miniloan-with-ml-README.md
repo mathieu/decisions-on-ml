@@ -7,7 +7,7 @@ Decision services coming with IBM Digital Business Automation are able to consum
 - surface the prediction call to estimate a risk or opportunity captured through a machine learning model in its Business Object Model
 - have one or more rules that calls one of predictions through a near natural language statement verbalized in English or any other suppported locale.
 
-<img src="../docs/images/miniloan-with-ml-rule-explorer.png" alt="Decision Service project in the Rule Explorer" width="200" height="600">
+<img src="../docs/images/miniloan-with-ml-rule-explorer.png" alt="Decision Service project in the Rule Explorer" width="200" height="400">
 
 ![Decision Service project in the Rule Explorer](../docs/images/miniloan-with-ml-rule-explorer.png "The extended miniloan project in the Rule Explorer")
 
