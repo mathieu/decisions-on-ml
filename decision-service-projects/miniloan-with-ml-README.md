@@ -9,13 +9,10 @@ Decision services coming with IBM Digital Business Automation are able to consum
 
 ![Decision Service project in the Rule Explorer](../docs/images/miniloan-with-ml-rule-explorer.png "The extended miniloan project in the Rule Explorer")
 
+![Ruleflow calling the prediction](../docs/images/miniloan-with-ml-ruleflow.png "A ruleflow with a task that cares about the ML estimated risk management")
+
 ![Rule calling the prediction](../docs/images/rule-with-ml.png "A rule calling a prediction of a repayment loan default")
  
-![Ruleflow calling the prediction](../docs/images/miniloan-with-ml-ruleflow.png "A ruleflow with a task that cares about the ML estimated risk management")
-  
-![Rule project](../docs/images/rule-with-ml.png "A rule calling a prediction of a repayment loan default")
-
-
 The decision service projects folder includes a miniloan project that leverages business rules the micro ml sdk to automate the processing of loan applications.
 
 The ready to use assets are:
