@@ -34,7 +34,7 @@ public class AutomationApiV10PredictionAdminApiTest {
 
     
     /**
-     * 
+     * Returns an heart beat
      *
      * 
      *

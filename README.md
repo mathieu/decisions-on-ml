@@ -1,8 +1,10 @@
-# Decision automation with machine learning
-[![Build Status](https://travis-ci.org/ODMDev/decisions-on-ml.svg?branch=master)
-[![GitHub release](https://img.shields.io/github/release/ODMDev/odm-ondocker.svg)](https://github.com/ODMDev/odm-ondocker/releases)
-[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ODMDev/odm-ondocker/dev.svg)](https://github.com/ODMDev/odm-ondocker)
+[![Build Status](https://travis-ci.org/ODMDev/decisions-on-ml.svg?branch=master)](https://travis-ci.org/ODMDev/decisions-on-ml.svg?branch=master)
+[![GitHub release](https://img.shields.io/github/release/ODMDev/decisions-on-ml.svg)](https://img.shields.io/github/release/ODMDev/decisions-on-ml.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
+# Decision automation with machine learning
+
 This repository demonstrates how IBM Decision Services can leverage ML predictive models hosted as micro services.
 
 Material aims at tackling 3 challenges:
@@ -23,5 +25,5 @@ The approaches combines Python for ML, Docker and OpenAPI.
 This repository is composed of 3 main parts:
 - an [ML microservice](ml-service/README.md): a micro service architecture to host ML models as REST APIs in a Docker container.
 - an [ML microservice sdk](ml-service-sdk/README.md): a sdk to remotely get a prediction from the microservice and manage the ML models.
-- [Decision services](decision-services/README.md): project samples leveraging rules and ml to automate decisioning
-   - miniloan project that leverages business rules the micro ml sdk to automate the processing of loan applications.
+- an [integration pattern for IBM Decision Services mixing rules and machine learning](decision-service-projects/README.md): an integration pattern and project samples to automate your decisioning by blending prescriptive and predictive logic.
+   - miniloan project that leverages business rules plus the micro ml sdk to automate the processing of loan applications.

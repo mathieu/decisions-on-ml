@@ -21,7 +21,7 @@ api = Api(app)
 
 ns = api.namespace('automation/api/v1.0/prediction/admin', description='administration')
 
-@ns.route('/isAlive')  # Create a URL route to this resource
+@ns.route('/is-alive')  # Create a URL route to this resource
 class HeartBeat(Resource):  # Create a RESTful resource
     def get(self):  # Create GET endpoint
         return {'answer': 'ok'}
