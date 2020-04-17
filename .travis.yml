@@ -12,9 +12,11 @@ before_install:
 - docker --version
 - docker-compose version
 script:
-- "./scripts/build.sh"
+- docker-compose build
+- echo "Starting Dynamic ML Service + ODM"
+- docker-compose up -d
 # Starting ML Service.
-- echo "Starting Dynamic ML Service"
+
 #- docker run -d -p 5000:5000 dynamic-ml-microservice
 #- docker run -d -p 4000:5000 dynamic-ml-microservice
 - "./scripts/suite.sh"
