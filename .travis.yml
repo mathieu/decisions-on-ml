@@ -16,6 +16,7 @@ script:
 - echo "Starting Dynamic ML Service + ODM"
 - docker-compose up -d
 # Starting ML Service.
+- curl -k -v -H "Content-Type: application/octet-stream" --data-binary @"./decision-service-projects/Miniloan Service/output/miniloanwithml.jar" -u odmAdmin:odmAdmin http://localhost:9080/res/apiauth/v1/ruleapps
 
 #- docker run -d -p 5000:5000 dynamic-ml-microservice
 #- docker run -d -p 4000:5000 dynamic-ml-microservice

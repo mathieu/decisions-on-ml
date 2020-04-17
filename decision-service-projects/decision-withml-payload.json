@@ -1,0 +1,20 @@
+{
+  "loan": {
+    "amount": 50000,
+    "duration": 240,
+    "yearlyInterestRate": 0.05,
+    "yearlyRepayment": 3,
+    "approved": true,
+    "messages": [
+    ]
+  },
+  "configuration": {
+    "url": "http://decision-ml:5000/"
+  },
+
+  "borrower": {
+    "name": "Joe",
+    "creditScore": 600,
+    "yearlyIncome": 8000
+  }
+}
