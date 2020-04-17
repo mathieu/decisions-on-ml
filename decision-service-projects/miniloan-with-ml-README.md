@@ -19,14 +19,16 @@ The ready to use assets are:
 - the RuleApp archive. This archive contains all you need to execute the rules and delegate a remote call to the micro ML service.
 - The Decision Service project. It is the set of files as you can have it on your file system to import an Eclipse project for Rule Designer 8.10.3 or later.
 
-Test Scenarios
+## Test Scenarios
 
-Scenario 1
+### Scenario 1
 ```console
 Borrower borrower = new miniloan.Borrower("Joe", 600, 8000)
 Loan loan = new miniloan.Loan(50000, 240, 0.05)
 risk.PredictiveServiceConfiguration result = new risk.PredictiveServiceConfiguration("http://127.0.0.1:5000");
+```
 
+```console
 class PredictionResponse {
     path: models/miniloandefault-rfc.joblib
     id: bf70a405-1a73-4b40-91a6-31d2de5bccdd
@@ -34,13 +36,14 @@ class PredictionResponse {
     probabilities: {0=0.9241445934859657, 1=0.07585540651403433}
 }
 false [Too big Debt-To-Income ratio]
-```
-Scenario 2
+
+### Scenario 2
 ```console
 Borrower borrower = new miniloan.Borrower("Joe", 600, 120000)
 Loan loan = new miniloan.Loan(500000, 240, 0.05)
 risk.PredictiveServiceConfiguration result = new risk.PredictiveServiceConfiguration("http://127.0.0.1:5000");
-
+```
+```console
 class PredictionResponse {
     path: models/miniloandefault-rfc.joblib
     id: c5c4e135-b6dd-4432-84f4-2176f8168fa1
