@@ -36,7 +36,7 @@ class PredictionResponse {
     probabilities: {0=0.9241445934859657, 1=0.07585540651403433}
 }
 false [Too big Debt-To-Income ratio]
-
+```
 ### Scenario 2
 ```console
 Borrower borrower = new miniloan.Borrower("Joe", 600, 120000)
