@@ -10,11 +10,12 @@ os:
 before_install:
 - mkdir -p $HOME/.cache
 - docker --version
+- docker-compose version
 script:
 - "./scripts/build.sh"
 # Starting ML Service.
 - echo "Starting Dynamic ML Service"
-- docker run -d -p 5000:5000 dynamic-ml-microservice
+#- docker run -d -p 5000:5000 dynamic-ml-microservice
 #- docker run -d -p 4000:5000 dynamic-ml-microservice
 - "./scripts/suite.sh"
 #notifications:
