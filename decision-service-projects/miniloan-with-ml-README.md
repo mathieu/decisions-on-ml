@@ -22,6 +22,7 @@ The ready to use assets are:
 Test Scenarios
 
 Scenario 1
+```console
 Borrower borrower = new miniloan.Borrower("Joe", 600, 8000)
 Loan loan = new miniloan.Loan(50000, 240, 0.05)
 risk.PredictiveServiceConfiguration result = new risk.PredictiveServiceConfiguration("http://127.0.0.1:5000");
@@ -33,8 +34,9 @@ class PredictionResponse {
     probabilities: {0=0.9241445934859657, 1=0.07585540651403433}
 }
 false [Too big Debt-To-Income ratio]
-
+```
 Scenario 2
+```console
 Borrower borrower = new miniloan.Borrower("Joe", 600, 120000)
 Loan loan = new miniloan.Loan(500000, 240, 0.05)
 risk.PredictiveServiceConfiguration result = new risk.PredictiveServiceConfiguration("http://127.0.0.1:5000");
@@ -46,3 +48,4 @@ class PredictionResponse {
     probabilities: {0=0.7096076123256951, 1=0.2903923876743048}
 }
 false [Too big Debt-To-Income ratio, The repayment default risk score is too high, the repayment default risk is predicted as 0.2903923876743048]
+```
