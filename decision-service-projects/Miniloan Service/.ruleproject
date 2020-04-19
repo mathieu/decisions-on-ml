@@ -5,8 +5,9 @@
   <outputLocation>output</outputLocation>
   <categories>any</categories>
   <paths xsi:type="ilog.rules.studio.model.xom:XOMPath" pathID="XOM">
-    <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY"/>
-    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="miniloan-xom" url="platform:/miniloan-xom" kind="JAVA_PROJECT"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY" exported="false"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="miniloan-xom" url="platform:/miniloan-xom" kind="JAVA_PROJECT" exported="true"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="ml-service-client" url="platform:/ml-service-client" kind="JAVA_PROJECT" exported="true"/>
   </paths>
   <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
     <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="miniloan" url="platform:/Miniloan Service/bom/miniloan.bom" origin="xom:/Miniloan Service/miniloan-xom"/>

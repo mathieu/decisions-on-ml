@@ -8,7 +8,7 @@
   <referencedVariables variableName="loan" variableSetName="Miniloan ServiceParameters" direction="IN_OUT">
     <variableSet href="../rules/Miniloan%20ServiceParameters.var#92d289c8-4db8-4669-bb9f-4a48010ba78c"/>
   </referencedVariables>
-  <referencedVariables variableName="configuration" variableSetName="Miniloan ServiceParameters" direction="IN_OUT">
+  <referencedVariables variableName="configuration" variableSetName="Miniloan ServiceParameters">
     <variableSet href="../rules/Miniloan%20ServiceParameters.var#92d289c8-4db8-4669-bb9f-4a48010ba78c"/>
   </referencedVariables>
   <ruleflow href="../rules/miniloan.rfl#f52ba17a-2a7e-4caa-9092-fecf906fcd6d"/>
