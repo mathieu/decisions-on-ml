@@ -1,0 +1,5 @@
+{
+  "apiPackage": "com.ibm.automation.ops.client.api",
+  "modelPackage": "com.ibm.automation.ops.client.model",
+  "dateLibrary": "java8"
+}
